@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/0xdev/Projects/repo/C_Playground/syscall/main.c" "/Users/0xdev/Projects/repo/C_Playground/syscall/cmake-build-debug/CMakeFiles/syscall.dir/main.c.o"
+  "/Users/0xdev/Projects/repo/C_Playground/tcp/main.c" "/Users/0xdev/Projects/repo/C_Playground/tcp/cmake-build-debug/CMakeFiles/tcp.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

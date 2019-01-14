@@ -50,54 +50,54 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/0xdev/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/183.4886.39/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = "/Users/0xdev/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/183.5153.40/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = "/Users/0xdev/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/183.4886.39/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
+RM = "/Users/0xdev/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/183.5153.40/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/0xdev/Projects/repo/C_Playground/syscall
+CMAKE_SOURCE_DIR = /Users/0xdev/Projects/repo/C_Playground/tcp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/0xdev/Projects/repo/C_Playground/syscall/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/0xdev/Projects/repo/C_Playground/tcp/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/syscall.dir
+# Target rules for target CMakeFiles/tcp.dir
 
 # All Build rule for target.
-CMakeFiles/syscall.dir/all:
-	$(MAKE) -f CMakeFiles/syscall.dir/build.make CMakeFiles/syscall.dir/depend
-	$(MAKE) -f CMakeFiles/syscall.dir/build.make CMakeFiles/syscall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/0xdev/Projects/repo/C_Playground/syscall/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target syscall"
-.PHONY : CMakeFiles/syscall.dir/all
+CMakeFiles/tcp.dir/all:
+	$(MAKE) -f CMakeFiles/tcp.dir/build.make CMakeFiles/tcp.dir/depend
+	$(MAKE) -f CMakeFiles/tcp.dir/build.make CMakeFiles/tcp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/0xdev/Projects/repo/C_Playground/tcp/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target tcp"
+.PHONY : CMakeFiles/tcp.dir/all
 
 # Include target in all.
-all: CMakeFiles/syscall.dir/all
+all: CMakeFiles/tcp.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/syscall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/0xdev/Projects/repo/C_Playground/syscall/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/syscall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/0xdev/Projects/repo/C_Playground/syscall/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/syscall.dir/rule
+CMakeFiles/tcp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/0xdev/Projects/repo/C_Playground/tcp/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/tcp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/0xdev/Projects/repo/C_Playground/tcp/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/tcp.dir/rule
 
 # Convenience name for target.
-syscall: CMakeFiles/syscall.dir/rule
+tcp: CMakeFiles/tcp.dir/rule
 
-.PHONY : syscall
-
-# clean rule for target.
-CMakeFiles/syscall.dir/clean:
-	$(MAKE) -f CMakeFiles/syscall.dir/build.make CMakeFiles/syscall.dir/clean
-.PHONY : CMakeFiles/syscall.dir/clean
+.PHONY : tcp
 
 # clean rule for target.
-clean: CMakeFiles/syscall.dir/clean
+CMakeFiles/tcp.dir/clean:
+	$(MAKE) -f CMakeFiles/tcp.dir/build.make CMakeFiles/tcp.dir/clean
+.PHONY : CMakeFiles/tcp.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/tcp.dir/clean
 
 .PHONY : clean
 
