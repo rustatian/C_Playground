@@ -1,0 +1,3 @@
+/media/psf/Home/Projects/repo/C_Playground/syscall/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/media/psf/Home/Projects/repo/C_Playground/syscall/cmake-build-debug/CMakeFiles/syscall.dir
+/media/psf/Home/Projects/repo/C_Playground/syscall/cmake-build-debug/CMakeFiles/edit_cache.dir

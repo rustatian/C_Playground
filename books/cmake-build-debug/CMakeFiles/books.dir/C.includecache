@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/0xdev/Projects/repo/C_Playground/books/main.c
+stdio.h
+-
+math.h
+-
+main.h
+/Users/0xdev/Projects/repo/C_Playground/books/main.h
+
+/Users/0xdev/Projects/repo/C_Playground/books/main.h
+
