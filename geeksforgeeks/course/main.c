@@ -1,36 +1,40 @@
-//
-// Created by Valery Piashchynski on 2019-04-09.
-//
-
-#include "main.h"
+{
+//Initial Template for C
 #include <stdio.h>
+//Position this line where user code will be pasted.
+int main() {
+    //code
 
-float roundddd(float var) {
-    // we use array of chars to store number
-    // as a string.
-    char str[20];
+    int t;
+    scanf("%d" , &t);
 
-    // Print in string the value of var
-    // with two decimal point
-    sprintf(str, "%.2f", var);
+    while(t--)
+    {
+        int x, y;
 
-    // scan string value in var
-    sscanf(str, "%f", &var);
+        scanf("%d %d", &x, &y);
+        // char ch[1];
+        // scanf("%s", ch);
+        do_operation(x, y);
 
-    return var;
+        printf("
+               ");
+
+
+    }
+    return 0;
+}
 }
 
-int main() {
-    float a;
-    char ch;
+/*Please note that it's Function problem i.e.
+you need to write your solution in the form of Function(s) only.
+Driver Code to call/invoke your function is mentioned above.*/
 
-    scanf("%f", &a);
-    scanf(" %c", &ch);
+//User function Template for C
+void do_operation(int x, int y)
+{
+    // your code here
 
 
-    printf("%.2f %d", a, ch);
-
-
-    return 0;
 }
 
