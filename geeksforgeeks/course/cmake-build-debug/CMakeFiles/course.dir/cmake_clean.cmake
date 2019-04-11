@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/course.dir/main.c.o"
+  "CMakeFiles/course.dir/binary_search.c.o"
   "course.pdb"
   "course"
 )

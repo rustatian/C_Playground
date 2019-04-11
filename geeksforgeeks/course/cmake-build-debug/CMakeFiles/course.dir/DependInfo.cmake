@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/Users/0xdev/Projects/repo/C_Playground/geeksforgeeks/course/binary_search.c" "/Users/0xdev/Projects/repo/C_Playground/geeksforgeeks/course/cmake-build-debug/CMakeFiles/course.dir/binary_search.c.o"
   "/Users/0xdev/Projects/repo/C_Playground/geeksforgeeks/course/main.c" "/Users/0xdev/Projects/repo/C_Playground/geeksforgeeks/course/cmake-build-debug/CMakeFiles/course.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

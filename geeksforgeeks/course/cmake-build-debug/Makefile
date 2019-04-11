@@ -123,6 +123,33 @@ course/fast:
 	$(MAKE) -f CMakeFiles/course.dir/build.make CMakeFiles/course.dir/build
 .PHONY : course/fast
 
+binary_search.o: binary_search.c.o
+
+.PHONY : binary_search.o
+
+# target to build an object file
+binary_search.c.o:
+	$(MAKE) -f CMakeFiles/course.dir/build.make CMakeFiles/course.dir/binary_search.c.o
+.PHONY : binary_search.c.o
+
+binary_search.i: binary_search.c.i
+
+.PHONY : binary_search.i
+
+# target to preprocess a source file
+binary_search.c.i:
+	$(MAKE) -f CMakeFiles/course.dir/build.make CMakeFiles/course.dir/binary_search.c.i
+.PHONY : binary_search.c.i
+
+binary_search.s: binary_search.c.s
+
+.PHONY : binary_search.s
+
+# target to generate assembly for a file
+binary_search.c.s:
+	$(MAKE) -f CMakeFiles/course.dir/build.make CMakeFiles/course.dir/binary_search.c.s
+.PHONY : binary_search.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... course"
+	@echo "... binary_search.o"
+	@echo "... binary_search.i"
+	@echo "... binary_search.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

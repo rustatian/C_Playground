@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/0xdev/Projects/repo/C_Playground/geeksforgeeks/course/binary_search.c">
+			<Option target="course"/>
+		</Unit>
+		<Unit filename="/Users/0xdev/Projects/repo/C_Playground/geeksforgeeks/course/binary_search.h">
+			<Option target="course"/>
+		</Unit>
 		<Unit filename="/Users/0xdev/Projects/repo/C_Playground/geeksforgeeks/course/main.c">
 			<Option target="course"/>
 		</Unit>
