@@ -6,13 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/0xdev/Projects/repo/C_Playground/geeksforgeeks/course/binary_search.c
-stdio.h
--
-
 /Users/0xdev/Projects/repo/C_Playground/geeksforgeeks/course/binary_search.h
 
 /Users/0xdev/Projects/repo/C_Playground/geeksforgeeks/course/main.c
+stdbool.h
+-
 stdio.h
 /Users/0xdev/Projects/repo/C_Playground/geeksforgeeks/course/stdio.h
 binary_search.h
