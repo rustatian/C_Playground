@@ -1,22 +1,26 @@
 #include "stdio.h"
+#include "stdlib.h"
 
-
-void swap(int *px, int *py) {
-    int temp;
-
-    temp = *px;
-    *px = *py;
-    *py = temp;
-}
+#define IN 1
+#define OUT 0
 
 int main() {
-    int a = 5;
-    int b = 6;
+    int c, nl, nw, nc, state;
 
-    swap(&a, &b);
+    state = OUT;
+    nl = nw = nc = 0;
 
-    printf("a = %d, b = %d", a, b);
+    while ((c = getchar()) != EOF) {
+        ++nc;
+        if (c == '\n')
+            ++nl;
 
-
-    return 0;
+        if (c == ' ' || c == '\n' || c == '\t')
+            state = OUT;
+        else if (state == OUT) {
+            state = IN;
+            ++nw;
+        }
+    }
+    printf("%d %d %d", nl, nw, nc);
 }
