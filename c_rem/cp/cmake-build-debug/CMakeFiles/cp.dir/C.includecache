@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/0xdev/Projects/repo/C_Playground/c_rem/cp/main.c
+stdio.h
+-
+fcntl.h
+-
+zconf.h
+-
+main.h
+/Users/0xdev/Projects/repo/C_Playground/c_rem/cp/main.h
+
+/Users/0xdev/Projects/repo/C_Playground/c_rem/cp/main.h
+

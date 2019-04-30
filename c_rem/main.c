@@ -1,26 +1,23 @@
 #include "stdio.h"
 #include "stdlib.h"
+#include <sys/syscall.h>
+#include <zconf.h>
 
-#define IN 1
-#define OUT 0
+int getchar(void) {
+    char c;
+    return (read(0,&c, 1)) ? (unsigned char) c : EOF;
+}
+
 
 int main() {
-    int c, nl, nw, nc, state;
+    char buf[BUFSIZ];
+    int n;
 
-    state = OUT;
-    nl = nw = nc = 0;
+    getchar();
 
-    while ((c = getchar()) != EOF) {
-        ++nc;
-        if (c == '\n')
-            ++nl;
 
-        if (c == ' ' || c == '\n' || c == '\t')
-            state = OUT;
-        else if (state == OUT) {
-            state = IN;
-            ++nw;
-        }
+    while((n = read(0, buf, BUFSIZ)) > 0) {
+        write(1, buf, n);
     }
-    printf("%d %d %d", nl, nw, nc);
+
 }
