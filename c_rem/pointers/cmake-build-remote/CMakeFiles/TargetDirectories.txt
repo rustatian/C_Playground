@@ -1,0 +1,3 @@
+/home/valery/Projects/repo/c_rem/pointers/cmake-build-remote/CMakeFiles/rebuild_cache.dir
+/home/valery/Projects/repo/c_rem/pointers/cmake-build-remote/CMakeFiles/pointers.dir
+/home/valery/Projects/repo/c_rem/pointers/cmake-build-remote/CMakeFiles/edit_cache.dir

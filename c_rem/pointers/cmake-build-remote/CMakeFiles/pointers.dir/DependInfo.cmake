@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/0xdev/Projects/repo/C_Playground/c_rem/pointers/main.c" "/Users/0xdev/Projects/repo/C_Playground/c_rem/pointers/cmake-build-debug/CMakeFiles/pointers.dir/main.c.o"
+  "/home/valery/Projects/repo/c_rem/pointers/main.c" "/home/valery/Projects/repo/c_rem/pointers/cmake-build-remote/CMakeFiles/pointers.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
