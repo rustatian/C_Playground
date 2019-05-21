@@ -1,0 +1,3 @@
+/home/valery/Projects/repo/C_Playground/memory_alloc/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/valery/Projects/repo/C_Playground/memory_alloc/cmake-build-debug/CMakeFiles/memory_alloc.dir
+/home/valery/Projects/repo/C_Playground/memory_alloc/cmake-build-debug/CMakeFiles/edit_cache.dir

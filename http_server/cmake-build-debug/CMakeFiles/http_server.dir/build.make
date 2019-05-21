@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/Cellar/cmake/3.14.4/bin/cmake
+CMAKE_COMMAND = /opt/clion/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/Cellar/cmake/3.14.4/bin/cmake -E remove -f
+RM = /opt/clion/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/0xdev/Projects/repo/C_Playground/http_server
+CMAKE_SOURCE_DIR = /home/valery/Projects/repo/C_Playground/http_server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/0xdev/Projects/repo/C_Playground/http_server/cmake-build-debug
+CMAKE_BINARY_DIR = /home/valery/Projects/repo/C_Playground/http_server/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/http_server.dir/depend.make
@@ -59,28 +59,43 @@ include CMakeFiles/http_server.dir/flags.make
 
 CMakeFiles/http_server.dir/main.c.o: CMakeFiles/http_server.dir/flags.make
 CMakeFiles/http_server.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/0xdev/Projects/repo/C_Playground/http_server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/http_server.dir/main.c.o"
-	/usr/local/Cellar/gcc/9.1.0/bin/gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/http_server.dir/main.c.o   -c /Users/0xdev/Projects/repo/C_Playground/http_server/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valery/Projects/repo/C_Playground/http_server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/http_server.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/http_server.dir/main.c.o   -c /home/valery/Projects/repo/C_Playground/http_server/main.c
 
 CMakeFiles/http_server.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/http_server.dir/main.c.i"
-	/usr/local/Cellar/gcc/9.1.0/bin/gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/0xdev/Projects/repo/C_Playground/http_server/main.c > CMakeFiles/http_server.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/valery/Projects/repo/C_Playground/http_server/main.c > CMakeFiles/http_server.dir/main.c.i
 
 CMakeFiles/http_server.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/http_server.dir/main.c.s"
-	/usr/local/Cellar/gcc/9.1.0/bin/gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/0xdev/Projects/repo/C_Playground/http_server/main.c -o CMakeFiles/http_server.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/valery/Projects/repo/C_Playground/http_server/main.c -o CMakeFiles/http_server.dir/main.c.s
+
+CMakeFiles/http_server.dir/home/valery/Projects/repo/C_Playground/memory_alloc/main.c.o: CMakeFiles/http_server.dir/flags.make
+CMakeFiles/http_server.dir/home/valery/Projects/repo/C_Playground/memory_alloc/main.c.o: /home/valery/Projects/repo/C_Playground/memory_alloc/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/valery/Projects/repo/C_Playground/http_server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/http_server.dir/home/valery/Projects/repo/C_Playground/memory_alloc/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/http_server.dir/home/valery/Projects/repo/C_Playground/memory_alloc/main.c.o   -c /home/valery/Projects/repo/C_Playground/memory_alloc/main.c
+
+CMakeFiles/http_server.dir/home/valery/Projects/repo/C_Playground/memory_alloc/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/http_server.dir/home/valery/Projects/repo/C_Playground/memory_alloc/main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/valery/Projects/repo/C_Playground/memory_alloc/main.c > CMakeFiles/http_server.dir/home/valery/Projects/repo/C_Playground/memory_alloc/main.c.i
+
+CMakeFiles/http_server.dir/home/valery/Projects/repo/C_Playground/memory_alloc/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/http_server.dir/home/valery/Projects/repo/C_Playground/memory_alloc/main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/valery/Projects/repo/C_Playground/memory_alloc/main.c -o CMakeFiles/http_server.dir/home/valery/Projects/repo/C_Playground/memory_alloc/main.c.s
 
 # Object files for target http_server
 http_server_OBJECTS = \
-"CMakeFiles/http_server.dir/main.c.o"
+"CMakeFiles/http_server.dir/main.c.o" \
+"CMakeFiles/http_server.dir/home/valery/Projects/repo/C_Playground/memory_alloc/main.c.o"
 
 # External object files for target http_server
 http_server_EXTERNAL_OBJECTS =
 
 http_server: CMakeFiles/http_server.dir/main.c.o
+http_server: CMakeFiles/http_server.dir/home/valery/Projects/repo/C_Playground/memory_alloc/main.c.o
 http_server: CMakeFiles/http_server.dir/build.make
 http_server: CMakeFiles/http_server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/0xdev/Projects/repo/C_Playground/http_server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable http_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/valery/Projects/repo/C_Playground/http_server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable http_server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/http_server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -93,6 +108,6 @@ CMakeFiles/http_server.dir/clean:
 .PHONY : CMakeFiles/http_server.dir/clean
 
 CMakeFiles/http_server.dir/depend:
-	cd /Users/0xdev/Projects/repo/C_Playground/http_server/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/0xdev/Projects/repo/C_Playground/http_server /Users/0xdev/Projects/repo/C_Playground/http_server /Users/0xdev/Projects/repo/C_Playground/http_server/cmake-build-debug /Users/0xdev/Projects/repo/C_Playground/http_server/cmake-build-debug /Users/0xdev/Projects/repo/C_Playground/http_server/cmake-build-debug/CMakeFiles/http_server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/valery/Projects/repo/C_Playground/http_server/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/valery/Projects/repo/C_Playground/http_server /home/valery/Projects/repo/C_Playground/http_server /home/valery/Projects/repo/C_Playground/http_server/cmake-build-debug /home/valery/Projects/repo/C_Playground/http_server/cmake-build-debug /home/valery/Projects/repo/C_Playground/http_server/cmake-build-debug/CMakeFiles/http_server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/http_server.dir/depend
 

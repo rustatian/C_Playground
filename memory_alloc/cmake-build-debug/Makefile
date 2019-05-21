@@ -48,10 +48,10 @@ RM = /opt/clion/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/valery/Projects/repo/C_Playground/http_server
+CMAKE_SOURCE_DIR = /home/valery/Projects/repo/C_Playground/memory_alloc
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/valery/Projects/repo/C_Playground/http_server/cmake-build-debug
+CMAKE_BINARY_DIR = /home/valery/Projects/repo/C_Playground/memory_alloc/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/valery/Projects/repo/C_Playground/http_server/cmake-build-debug/CMakeFiles /home/valery/Projects/repo/C_Playground/http_server/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/valery/Projects/repo/C_Playground/memory_alloc/cmake-build-debug/CMakeFiles /home/valery/Projects/repo/C_Playground/memory_alloc/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/valery/Projects/repo/C_Playground/http_server/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/valery/Projects/repo/C_Playground/memory_alloc/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named http_server
+# Target rules for targets named memory_alloc
 
 # Build rule for target.
-http_server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 http_server
-.PHONY : http_server
+memory_alloc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 memory_alloc
+.PHONY : memory_alloc
 
 # fast build rule for target.
-http_server/fast:
-	$(MAKE) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/build
-.PHONY : http_server/fast
-
-home/valery/Projects/repo/C_Playground/memory_alloc/main.o: home/valery/Projects/repo/C_Playground/memory_alloc/main.c.o
-
-.PHONY : home/valery/Projects/repo/C_Playground/memory_alloc/main.o
-
-# target to build an object file
-home/valery/Projects/repo/C_Playground/memory_alloc/main.c.o:
-	$(MAKE) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/home/valery/Projects/repo/C_Playground/memory_alloc/main.c.o
-.PHONY : home/valery/Projects/repo/C_Playground/memory_alloc/main.c.o
-
-home/valery/Projects/repo/C_Playground/memory_alloc/main.i: home/valery/Projects/repo/C_Playground/memory_alloc/main.c.i
-
-.PHONY : home/valery/Projects/repo/C_Playground/memory_alloc/main.i
-
-# target to preprocess a source file
-home/valery/Projects/repo/C_Playground/memory_alloc/main.c.i:
-	$(MAKE) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/home/valery/Projects/repo/C_Playground/memory_alloc/main.c.i
-.PHONY : home/valery/Projects/repo/C_Playground/memory_alloc/main.c.i
-
-home/valery/Projects/repo/C_Playground/memory_alloc/main.s: home/valery/Projects/repo/C_Playground/memory_alloc/main.c.s
-
-.PHONY : home/valery/Projects/repo/C_Playground/memory_alloc/main.s
-
-# target to generate assembly for a file
-home/valery/Projects/repo/C_Playground/memory_alloc/main.c.s:
-	$(MAKE) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/home/valery/Projects/repo/C_Playground/memory_alloc/main.c.s
-.PHONY : home/valery/Projects/repo/C_Playground/memory_alloc/main.c.s
+memory_alloc/fast:
+	$(MAKE) -f CMakeFiles/memory_alloc.dir/build.make CMakeFiles/memory_alloc.dir/build
+.PHONY : memory_alloc/fast
 
 main.o: main.c.o
 
@@ -156,7 +129,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/main.c.o
+	$(MAKE) -f CMakeFiles/memory_alloc.dir/build.make CMakeFiles/memory_alloc.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -165,7 +138,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/main.c.i
+	$(MAKE) -f CMakeFiles/memory_alloc.dir/build.make CMakeFiles/memory_alloc.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -174,7 +147,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) -f CMakeFiles/http_server.dir/build.make CMakeFiles/http_server.dir/main.c.s
+	$(MAKE) -f CMakeFiles/memory_alloc.dir/build.make CMakeFiles/memory_alloc.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -184,11 +157,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... http_server"
+	@echo "... memory_alloc"
 	@echo "... edit_cache"
-	@echo "... home/valery/Projects/repo/C_Playground/memory_alloc/main.o"
-	@echo "... home/valery/Projects/repo/C_Playground/memory_alloc/main.i"
-	@echo "... home/valery/Projects/repo/C_Playground/memory_alloc/main.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

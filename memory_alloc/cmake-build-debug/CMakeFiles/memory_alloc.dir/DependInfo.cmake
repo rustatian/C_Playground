@@ -4,8 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/valery/Projects/repo/C_Playground/memory_alloc/main.c" "/home/valery/Projects/repo/C_Playground/http_server/cmake-build-debug/CMakeFiles/http_server.dir/home/valery/Projects/repo/C_Playground/memory_alloc/main.c.o"
-  "/home/valery/Projects/repo/C_Playground/http_server/main.c" "/home/valery/Projects/repo/C_Playground/http_server/cmake-build-debug/CMakeFiles/http_server.dir/main.c.o"
+  "/home/valery/Projects/repo/C_Playground/memory_alloc/main.c" "/home/valery/Projects/repo/C_Playground/memory_alloc/cmake-build-debug/CMakeFiles/memory_alloc.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
