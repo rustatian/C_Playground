@@ -1,5 +1,7 @@
 #include <lzma.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <limits.h>
 
 typedef struct {
     long key;
@@ -31,5 +33,8 @@ float *myFunc(size_t n) {
 }
 
 int main() {
+    printf("Storage sizel");
+
+    printf("The type char is %s. \n\n", CHAR_MIN < 0 ? "signed" : "unsigned");
 
 }
