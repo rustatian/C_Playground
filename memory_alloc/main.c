@@ -5,7 +5,6 @@ typedef struct {
     long key;
 } Record;
 
-
 float *myFunc(size_t n) {
     //reserve storage
     double *dPtr = malloc(sizeof(double));
@@ -14,6 +13,8 @@ float *myFunc(size_t n) {
     } else { // got the memory, use it
         *dPtr = 0.07;
     }
+    Record *rPtr;
+
 
     Record *rPtr;
     // get the storage for two objects of type Record
