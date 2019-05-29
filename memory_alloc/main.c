@@ -27,7 +27,7 @@ float *myFunc(size_t n) {
         // insufficient memory error
         return NULL;
     }
-
+    
     float *fPtr = malloc(n * sizeof(float));
     if (fPtr == NULL) {
         return NULL;
