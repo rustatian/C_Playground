@@ -8,6 +8,9 @@ int getchar(void) {
     return (read(0,&c, 1)) ? (unsigned char) c : EOF;
 }
 
+int someName() {
+    int a = 10;
+}
 
 int main() {
     char buf[BUFSIZ];
