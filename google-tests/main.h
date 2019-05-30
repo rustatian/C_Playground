@@ -1,12 +1,12 @@
-#ifndef GTEST_SAMPLES_SAMPLE1_H_
-#define GTEST_SAMPLES_SAMPLE1_H_
+typedef enum {
+    POWER_OFF,
+    POWER_ON,
+} PowerState;
 
-#include <stdbool.h>
+void power_button_initialize(PowerState initalState);
 
-// Returns n! (the factorial of n).  For negative n, n! is defined to be 1.
-int Factorial(int n);
+PowerState power_button_getPowerState(void);
 
-// Returns true iff n is a prime number.
-bool IsPrime(int n);
+void power_button_pressMomentary(void);
 
-#endif  // GTEST_SAMPLES_SAMPLE1_H_
+void power_button_pressHold(void);

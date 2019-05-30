@@ -1,0 +1,1 @@
+/usr/local/Cellar/gcc/9.1.0/bin/gcc-9 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/google-test.dir/main.c.o CMakeFiles/google-test.dir/test_main.c.o CMakeFiles/google-test.dir/test_pb.c.o  -o google-test 
