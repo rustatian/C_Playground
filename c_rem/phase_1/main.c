@@ -11,7 +11,8 @@ int main() {
             [3] = .00007,
     };
 
-
+ 
+    
     for (size_t i = 0; i < sizeof(A)/ sizeof(A[0]); ++i) {
         printf("element %zu is %g, \tits square is %g\n",
                i,
