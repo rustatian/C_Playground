@@ -51,3 +51,9 @@ Module.symvers
 Mkfile.old
 dkms.conf
 .idea/*
+*/cmake-build-debug/*
+
+c_rem/cp/cmake-build-debug/*
+c_rem/pointers/cmake-build-debug/*
+c_rem/phase_1/cmake-build-debug/*
+geeksforgeeks/course/cmake-build-debug/*
