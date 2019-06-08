@@ -15,9 +15,4 @@ int main(int argc, char **argv) {
     memcpy(name, argv[0], len);
 
     name[len] = 0;
-
-
-
-
-
 }
