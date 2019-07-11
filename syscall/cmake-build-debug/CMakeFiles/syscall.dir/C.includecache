@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/media/psf/Home/Projects/repo/C_Playground/syscall/main.c
+/home/valery/Projects/repo/C_Playground/syscall/main.c
 stdio.h
 -
 time.h

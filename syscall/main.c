@@ -1,7 +1,13 @@
 #include <stdio.h>
 #include <time.h>
 
+double square(double x) {
+    return x * x;
+}
+
 int main() {
+    printf("num is: %f\n", square(1.5));
+
     struct timespec tim, tim2;
     tim.tv_sec = 5;
     tim.tv_nsec = 0;

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/media/psf/Home/Projects/repo/C_Playground/syscall/main.c" "/media/psf/Home/Projects/repo/C_Playground/syscall/cmake-build-debug/CMakeFiles/syscall.dir/main.c.o"
+  "/home/valery/Projects/repo/C_Playground/syscall/main.c" "/home/valery/Projects/repo/C_Playground/syscall/cmake-build-debug/CMakeFiles/syscall.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
