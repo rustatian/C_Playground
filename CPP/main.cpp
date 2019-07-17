@@ -5,54 +5,15 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include "string.h"
 #include "main.h"
 
 
-using namespace std;
-
-vector<int> vec;
-
-struct Record {
-    string Name;
-};
-
-double square(double x) {
-    return x * x;
-}
-
-void copy_fct() {
-    int v1[10] = {1, 2, 3, 4, 5, 6, 7};
-
-    int v2[10];
-
-    for (auto i = 0; i < (sizeof(v1) / sizeof(v1[0])); i++) {
-        v2[i] = v1[i];
-    }
-}
-
 int main() {
-    copy_fct();
+    std::cout << "Please, enter you name\n";
+    std::string first_name;
 
-    constexpr int dvm = 12;
-    int var = 17;
-    const double sqv = sqrt(var);
+    std::cin >> first_name;
 
-    vector<double> v{1, 2, 3};
-
-    string motto{"whaaat???"};
-
-
-    auto p = new Record{"hume"};
-    p->Name = "rew";
-
-
-    std::cout << "Hello, Word!\n";
-
-
-    char fv[6];
-
-    char *tp = &fv[3];
-
-
-    return 0;
+    std::cout << "Hello " + first_name + "!";
 }
