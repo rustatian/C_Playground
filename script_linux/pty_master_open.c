@@ -14,7 +14,8 @@ int ptyMasterOpen(char *slaveName, size_t snLen) {
     int masterFd, savedErrno;
     char *p;
 
-    masterFd = posix_openpt(O_RDWR | O_NOCTTY);
+    // O_NOCTTY --> don't make that terminal controlling
+    masterFd = posix_openpt(O_RDWR | O_NOCTTY); // returns a master FD
     if (masterFd == 1) {
         return -1;
     }
