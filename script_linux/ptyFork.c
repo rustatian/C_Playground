@@ -14,7 +14,8 @@
 
 #define MAX_SNAME 1000
 
-pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios *slaveTermios, const struct winsize *slaveWS) {
+pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios *slaveTermios,
+              const struct winsize *slaveWS) {
     int mfd, slaveFd, savedErrno;
     pid_t childPid;
     char slname[MAX_SNAME];
@@ -62,6 +63,50 @@ pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios
         _exit(1);
     }
 
+#ifdef TIOCSCTTY // <----------- for BSD
+    if (ioctl(slaveFd, TIOCSCTTY, 0) == -1) {
+        printf("error in ioctl");
+        _exit(1);
+    }
+#endif
+    if (slaveTermios != NULL){
+        if (tcsetattr(slaveFd, TCSANOW, slaveTermios) == -1) {
+            printf("error tcsetattr");
+            _exit(1);
+        }
+    }
+
+    if (slaveWS != NULL) {
+        if (ioctl(slaveFd, TIOCSCTTY, slaveWS) == -1) {
+            if (tcsetattr(slaveFd, TCSANOW, slaveTermios) == -1) {
+                printf("error ioctl(slaveFd, TIOCSCTTY, slaveWS)");
+                _exit(1);
+            }
+        }
+    }
+
+    // duplicate pty slave to be child's stdin, stdout and stderr
+
+    if (dup2(slaveFd, STDIN_FILENO) != STDIN_FILENO) {
+        printf("error dup2 STDIN_FILENO");
+        _exit(1);
+    }
+
+    if (dup2(slaveFd, STDOUT_FILENO) != STDOUT_FILENO) {
+        printf("error dup2 STDOUT_FILENO");
+        _exit(1);
+    }
+
+    if (dup2(slaveFd, STDERR_FILENO) != STDERR_FILENO) {
+        printf("error dup2 STDERR_FILENO");
+        _exit(1);
+    }
+
+    if(slaveFd > STDERR_FILENO) {
+        close(slaveFd);
+    }
+
+    return 0;
 
 }
 
