@@ -8,6 +8,7 @@
 #include "string.h"
 #include <unistd.h>
 #include <errno.h>
+#include <stdio.h>
 #include "ptyFork.h"
 #include "pty_master_open.h"
 
@@ -34,13 +35,34 @@ pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios
     }
 
     childPid = fork();
-
     if (childPid == -1) {
         savedErrno = errno;
         close(mfd);
         errno = savedErrno;
         return -1;
     }
+
+    if (childPid != 0) {
+        *masterFd = mfd;
+        return childPid;
+    }
+
+    // for child
+
+    if (setsid() == -1) {
+        printf("error in setsid");
+        _exit(1);
+    }
+
+    close(mfd);
+
+    slaveFd = open(slname, O_RDWR);
+    if (slaveFd == -1) {
+        printf("error in open slname");
+        _exit(1);
+    }
+
+
 }
 
 
