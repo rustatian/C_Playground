@@ -3,8 +3,7 @@
 //
 
 #ifndef SCRIPT_LINUX_PTYFORK_H
-#include <stddef.h>
-#include <unistd.h>
+#include "sys/types.h"
 #define SCRIPT_LINUX_PTYFORK_H
 
 #endif //SCRIPT_LINUX_PTYFORK_H

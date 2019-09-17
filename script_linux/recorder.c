@@ -63,16 +63,47 @@ int main(int argc, char *argv[]) {
     }
 
     recorderFd = open((argc > 1) ? argv[1] : "recorderscript", O_WRONLY | O_CREAT | O_TRUNC,
-            S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH);
+                      S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH);
 
     if (recorderFd == -1) {
         printf("error on recorderScript");
         _exit(1);
     }
 
-    ttySetRaw
+    ttySetRaw(STDIN_FILENO, &ttyOrigin);
 
+    if (atexit(ttyReset) != 0) {
+        printf("atexit");
+        _exit(1);
+    }
 
+    for (;;) {
+        FD_ZERO(&inFds);
+        FD_SET(STDIN_FILENO, &inFds);
+        FD_SET(masterFd, &inFds);
+
+        if (select((masterFd + 1), &inFds, NULL, NULL, NULL) == -1) {
+            printf("select");
+            _exit(1);
+        }
+
+        if(FD_ISSET(STDIN_FILENO, &inFds)) { // stdin --> pty
+            numRead = read(STDIN_FILENO, buf, BUF_SIZE);
+            if (numRead <= 0) {
+                printf("success");
+                _exit(0);
+            }
+
+            if (write(STDOUT_FILENO, buf, numRead) != numRead) {
+                printf("fatal, partial write");
+                _exit(1);
+            }
+            if (write(recorderFd, buf, numRead) != numRead) {
+                printf("fatal, partial (recorderFd)");
+                _exit(1);
+            }
+        }
+    }
 }
 
 
