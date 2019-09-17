@@ -5,6 +5,8 @@
 #include "recorder.h"
 #include <fcntl.h>
 #include <termios.h>
+#include <libgen.h>
+#include <sys/stat.h>
 #include <sys/ioctl.h>
 #include <sys/select.h>
 #include <stddef.h>
@@ -12,6 +14,7 @@
 #include <unistd.h>
 #include <errno.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #define BUF_SIZE 256
 #define MAX_SNAME 1000
@@ -49,6 +52,25 @@ int main(int argc, char *argv[]) {
         printf("error on ptyFork");
         _exit(1);
     }
+
+    if (childPid == 0) { // child execute a shell on pty slave
+        shell = getenv("SHELL");
+        if (shell == NULL || *shell == '\0') {
+            shell = "/bin/sh";
+        }
+
+        execlp(shell, shell, (char *) NULL);
+    }
+
+    recorderFd = open((argc > 1) ? argv[1] : "recorderscript", O_WRONLY | O_CREAT | O_TRUNC,
+            S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH);
+
+    if (recorderFd == -1) {
+        printf("error on recorderScript");
+        _exit(1);
+    }
+
+    ttySetRaw
 
 
 }
