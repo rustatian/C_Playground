@@ -82,13 +82,26 @@ int main(int argc, char *argv[]) {
         FD_SET(STDIN_FILENO, &inFds);
         FD_SET(masterFd, &inFds);
 
-        if (select((masterFd + 1), &inFds, NULL, NULL, NULL) == -1) {
+        if (select(masterFd + 1, &inFds, NULL, NULL, NULL) == -1) {
             printf("select");
             _exit(1);
         }
 
         if(FD_ISSET(STDIN_FILENO, &inFds)) { // stdin --> pty
             numRead = read(STDIN_FILENO, buf, BUF_SIZE);
+            if (numRead <= 0) {
+                printf("success");
+                _exit(0);
+            }
+
+            if (write(masterFd, buf, numRead) != numRead) {
+                printf("fatal, partial");
+                _exit(1);
+            }
+        }
+
+        if(FD_ISSET(masterFd, &inFds)) {
+            numRead = read(masterFd, buf, BUF_SIZE);
             if (numRead <= 0) {
                 printf("success");
                 _exit(0);
