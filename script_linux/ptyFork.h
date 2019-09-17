@@ -3,8 +3,13 @@
 //
 
 #ifndef SCRIPT_LINUX_PTYFORK_H
+#include <stddef.h>
+#include <unistd.h>
 #define SCRIPT_LINUX_PTYFORK_H
 
 #endif //SCRIPT_LINUX_PTYFORK_H
 
-pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios *slaveTermios, const struct winsize *slaveWS);
+pid_t ptyFork(int *masterFd, char *slaveName,
+        size_t snLen, const struct
+        termios *slaveTermios,
+        const struct winsize *slaveWS);

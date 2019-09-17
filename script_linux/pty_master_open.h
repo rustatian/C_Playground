@@ -3,6 +3,8 @@
 //
 
 #ifndef SCRIPT_LINUX_PTY_MASTER_OPEN_H
+
+#include "stddef.h"
 #define SCRIPT_LINUX_PTY_MASTER_OPEN_H
 
 #endif //SCRIPT_LINUX_PTY_MASTER_OPEN_H

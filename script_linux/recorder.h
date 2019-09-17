@@ -3,6 +3,9 @@
 //
 
 #ifndef SCRIPT_LINUX_RECORDER_H
+
+#include "pty_master_open.h"
+#include "ptyFork.h"
 #define SCRIPT_LINUX_RECORDER_H
 
 #endif //SCRIPT_LINUX_RECORDER_H

@@ -7,6 +7,7 @@
 #include <termios.h>
 #include <sys/ioctl.h>
 #include <sys/select.h>
+#include <stddef.h>
 #include "string.h"
 #include <unistd.h>
 #include <errno.h>
@@ -30,7 +31,25 @@ int main(int argc, char *argv[]) {
     int masterFd, recorderFd;
     struct winsize ws;
     fd_set inFds;
-    
+    char buf[BUF_SIZE];
+    ssize_t numRead;
+    pid_t childPid;
+
+    if (tcgetattr(STDIN_FILENO, &ttyOrigin) == -1) {
+        printf("error on tcgetattr");
+        _exit(1);
+    }
+    if (ioctl(STDIN_FILENO, TIOCGWINSZ, &ws) < 0) {
+        printf("error on ioctl");
+        _exit(1);
+    }
+
+    childPid = ptyFork(&masterFd, slaveName, MAX_SNAME, &ttyOrigin, &ws);
+    if (childPid == -1) {
+        printf("error on ptyFork");
+        _exit(1);
+    }
+
 
 }
 
