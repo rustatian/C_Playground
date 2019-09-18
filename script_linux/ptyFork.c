@@ -35,6 +35,9 @@ pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios
         }
     }
 
+    ioctl(STDIN_FILENO, TIOCGWINSZ, &slaveWS);
+    ioctl(mfd, TIOCSWINSZ, &slaveWS);
+
     childPid = fork();
     if (childPid == -1) {
         savedErrno = errno;
@@ -55,8 +58,6 @@ pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios
         _exit(1);
     }
 
-    ioctl(STDIN_FILENO, TIOCGWINSZ, &slaveWS);
-    ioctl(mfd, TIOCSWINSZ, &slaveWS);
 
     close(mfd);
 

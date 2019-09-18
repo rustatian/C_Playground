@@ -98,6 +98,9 @@ int main(int argc, char *argv[]) {
                 exit(0);
             }
 
+            ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws);
+            ioctl(masterFd, TIOCSWINSZ, &ws);
+
             if (write(masterFd, buf, numRead) != numRead) {
                 printf("fatal, partial");
                 exit(1);
