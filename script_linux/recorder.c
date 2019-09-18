@@ -15,6 +15,7 @@
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <poll.h>
 
 #define BUF_SIZE 256
 #define MAX_SNAME 1000
@@ -22,7 +23,7 @@
 struct termios ttyOrigin;
 
 static void ttyReset(void) {
-    if (tcsetattr(STDIN_FILENO, TCSANOW, &ttyOrigin) == -1) {
+    if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &ttyOrigin) == -1) {
         printf("error while setting origin");
         _exit(1);
     }
@@ -40,17 +41,17 @@ int main(int argc, char *argv[]) {
 
     if (tcgetattr(STDIN_FILENO, &ttyOrigin) == -1) {
         printf("error on tcgetattr");
-        _exit(1);
+        exit(1);
     }
     if (ioctl(STDIN_FILENO, TIOCGWINSZ, &ws) < 0) {
         printf("error on ioctl");
-        _exit(1);
+        exit(1);
     }
 
     childPid = ptyFork(&masterFd, slaveName, MAX_SNAME, &ttyOrigin, &ws);
     if (childPid == -1) {
         printf("error on ptyFork");
-        _exit(1);
+        exit(1);
     }
 
     if (childPid == 0) { // child execute a shell on pty slave
@@ -67,14 +68,14 @@ int main(int argc, char *argv[]) {
 
     if (recorderFd == -1) {
         printf("error on recorderScript");
-        _exit(1);
+        exit(1);
     }
 
     ttySetRaw(STDIN_FILENO, &ttyOrigin);
 
     if (atexit(ttyReset) != 0) {
         printf("atexit");
-        _exit(1);
+        exit(1);
     }
 
     for (;;) {
@@ -82,38 +83,46 @@ int main(int argc, char *argv[]) {
         FD_SET(STDIN_FILENO, &inFds);
         FD_SET(masterFd, &inFds);
 
-        if (select(masterFd + 1, &inFds, NULL, NULL, NULL) == -1) {
+        //The nfds argument must be set one greater than the highest file descriptor
+        //number included in any of the three file descriptor sets. This argument allows
+        //select() to be more efficient, since the kernel then knows not to check whether file
+        //descriptor numbers higher than this value are part of each file descriptor set.
+        if (poll(masterFd + 1, &inFds, NULL) == -1) {
             printf("select");
-            _exit(1);
+            exit(1);
         }
 
         if(FD_ISSET(STDIN_FILENO, &inFds)) { // stdin --> pty
             numRead = read(STDIN_FILENO, buf, BUF_SIZE);
             if (numRead <= 0) {
                 printf("success");
-                _exit(0);
+                exit(0);
             }
 
             if (write(masterFd, buf, numRead) != numRead) {
                 printf("fatal, partial");
-                _exit(1);
+                exit(1);
             }
         }
 
         if(FD_ISSET(masterFd, &inFds)) {
             numRead = read(masterFd, buf, BUF_SIZE);
             if (numRead <= 0) {
+                if (tcsetattr(masterFd, TCSAFLUSH, &ttyOrigin) == -1) {
+                    printf("failed to flush");
+                    exit(1);
+                }
                 printf("success");
-                _exit(0);
+                exit(0);
             }
 
             if (write(STDOUT_FILENO, buf, numRead) != numRead) {
                 printf("fatal, partial write");
-                _exit(1);
+                exit(1);
             }
             if (write(recorderFd, buf, numRead) != numRead) {
                 printf("fatal, partial (recorderFd)");
-                _exit(1);
+                exit(1);
             }
         }
     }

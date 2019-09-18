@@ -138,7 +138,7 @@ void doinput() {
     char ibuf[BUFSIZ];
 
     (void) fclose(fscript);
-    while ((cc = read(0, ibuf, BUFSIZ)) > 0) {
+    while ((cc = read(STDIN_FILENO, ibuf, BUFSIZ)) > 0) {
         (void) write(master, ibuf, cc);
     }
 
@@ -227,7 +227,7 @@ void dooutput() {
             check_output(obuf, cc);
         h.len = cc;
         gettimeofday(&h.tv, NULL);
-        (void) write(1, obuf, cc);
+        (void) write(STDOUT_FILENO, obuf, cc);
         (void) write_header(fscript, &h);
         (void) fwrite(obuf, 1, cc, fscript);
     }
