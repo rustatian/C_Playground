@@ -64,16 +64,22 @@ static int convert_to_little_endian(int x) {
 }
 
 
-int write_header(FILE *fp, Header *h) {
+int write_header(int fd, Header *h) {
     int buf[3];
 
     buf[0] = convert_to_little_endian(h->tv.tv_sec);
     buf[1] = convert_to_little_endian(h->tv.tv_usec);
     buf[2] = convert_to_little_endian(h->len);
 
-    if (fwrite(buf, sizeof(int), 3, fp) == 0) {
-        return 0;
+    if (write(fd, buf, 3) != 3) {
+        printf("num write is not equal 3");
+        exit(1);
     }
+
+
+//    if (fwrite(buf, sizeof(int), 3, fp) == 0) {
+//        return 0;
+//    }
 
     return 1;
 }
@@ -159,18 +165,9 @@ int main(int argc, char *argv[]) {
             }
         }
 
-//        if (FD_ISSET(STDOUT_FILENO, &inFds)) { // stdout --> pty
-//            numRead = read(STDOUT_FILENO, buf, BUF_SIZE);
-//            if (numRead <= 0) {
-//                printf("success");
-//                exit(0);
-//            }
-//
-//            if (write(masterFd, buf, numRead) != numRead) {
-//                printf("fatal, partial");
-//                exit(1);
-//            }
-//        }
+
+//extern ssize_t write (int __fd, const void *__buf, size_t __n) __wur;
+//extern size_t fwrite (const void *__restrict __ptr, size_t __size, size_t __n, FILE *__restrict __s);
 
 
         if (FD_ISSET(masterFd, &inFds)) {
@@ -192,10 +189,15 @@ int main(int argc, char *argv[]) {
                 exit(1);
             }
 
-//            write_header(recorderFd, &header);
-
+            // write info to file
             if (write(recorderFd, buf, numRead) != numRead) {
                 printf("fatal, partial (recorderFd)");
+                exit(1);
+            }
+
+            // write times to file
+            if (write_header(recorderFd, &header) != 1) {
+                printf("fatal error when write FD");
                 exit(1);
             }
         }
