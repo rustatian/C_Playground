@@ -15,7 +15,6 @@
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <poll.h>
 
 #define BUF_SIZE 256
 #define MAX_SNAME 1000
@@ -87,7 +86,7 @@ int main(int argc, char *argv[]) {
         //number included in any of the three file descriptor sets. This argument allows
         //select() to be more efficient, since the kernel then knows not to check whether file
         //descriptor numbers higher than this value are part of each file descriptor set.
-        if (poll(masterFd + 1, &inFds, NULL) == -1) {
+        if (select(masterFd + 1, &inFds, NULL, NULL, NULL) == -1) {
             printf("select");
             exit(1);
         }

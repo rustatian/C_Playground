@@ -55,6 +55,9 @@ pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios
         _exit(1);
     }
 
+    ioctl(STDIN_FILENO, TIOCGWINSZ, &slaveWS);
+    ioctl(mfd, TIOCSWINSZ, &slaveWS);
+
     close(mfd);
 
     slaveFd = open(slname, O_RDWR);
@@ -70,13 +73,21 @@ pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios
     }
 #endif
     if (slaveTermios != NULL){
+
         if (tcsetattr(slaveFd, TCSANOW, slaveTermios) == -1) {
             printf("error tcsetattr");
             _exit(1);
         }
     }
+//    tcgetattr(STDIN_FILENO, &tt)
+//
+//
+//    ioctl(fd_termios, TIOCGWINSZ, &ws);
+//    ioctl(fdm, TIOCSWINSZ, &ws);
 
     if (slaveWS != NULL) {
+//        The ioctl(fd, TIOCNOTTY) operation can be used to remove a process’s association
+//        with its controlling terminal, specified via the file descriptor fd.
         if (ioctl(slaveFd, TIOCSCTTY, slaveWS) == -1) {
             if (tcsetattr(slaveFd, TCSANOW, slaveTermios) == -1) {
                 printf("error ioctl(slaveFd, TIOCSCTTY, slaveWS)");
