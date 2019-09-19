@@ -35,7 +35,9 @@ pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios
         }
     }
 
+    // get terminal info
     ioctl(STDIN_FILENO, TIOCGWINSZ, &slaveWS);
+    // set serminal info (to the master)
     ioctl(mfd, TIOCSWINSZ, &slaveWS);
 
     childPid = fork();
