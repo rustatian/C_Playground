@@ -48,12 +48,17 @@ pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios
         return -1;
     }
 
+
+    // from this point there is 2 processes, child and parent --> childPid = fork();
+    // master PID will be always 0, so, at this point we are set masterFd to *masterFd
+    // and return PID for child
+    // BUT, as far as child pid is not equal to 0 in that process we continue execution (child PID is not equal to 0 in his process)
     if (childPid != 0) {
         *masterFd = mfd;
         return childPid;
     }
 
-    // for child
+    // for child execution continues
 
     if (setsid() == -1) {
         printf("error in setsid");
@@ -121,7 +126,6 @@ pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios
     }
 
     return 0;
-
 }
 
 

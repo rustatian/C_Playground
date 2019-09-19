@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
+#include "paths.h"
 
 #define BUF_SIZE 256
 #define MAX_SNAME 1000
@@ -109,10 +110,10 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
 
-    if (childPid == 0) { // child execute a shell on pty slave
+    if (childPid == 0) { // child execute a shell on pty slave, this is the controlling process
         shell = getenv("SHELL");
         if (shell == NULL || *shell == '\0') {
-            shell = "/bin/sh";
+            shell = _PATH_BSHELL;
         }
 
         execlp(shell, shell, (char *) NULL);
