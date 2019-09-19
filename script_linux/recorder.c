@@ -153,6 +153,7 @@ int main(int argc, char *argv[]) {
 
         Header header;
 
+        // this is the user stdin
         if (FD_ISSET(STDIN_FILENO, &inFds)) { // stdin --> pty
             numRead = read(STDIN_FILENO, buf, BUF_SIZE);
             if (numRead <= 0) {
@@ -167,10 +168,7 @@ int main(int argc, char *argv[]) {
         }
 
 
-//extern ssize_t write (int __fd, const void *__buf, size_t __n) __wur;
-//extern size_t fwrite (const void *__restrict __ptr, size_t __size, size_t __n, FILE *__restrict __s);
-
-
+        // this is stdout from terminal
         if (FD_ISSET(masterFd, &inFds)) {
             numRead = read(masterFd, buf, BUF_SIZE);
             if (numRead <= 0) {
