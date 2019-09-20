@@ -6,8 +6,8 @@
 #include <sys/time.h>
 #include <string.h>
 #include "getopt.h"
-#include "ttyrec.h"
 #include "io.h"
+#include "ttyplay.h"
 
 typedef double (*WaitFunc)(struct timeval prev, struct timeval cur, double speed);
 typedef int (*ReadFunc)(FILE *fp, Header *h, char **buf);
@@ -201,7 +201,6 @@ int main(int argc, char **argv) {
     FILE *input = NULL;
     struct termios old, new;
 
-    set_progname(argv[0]);
     while (1) {
         int ch = getopt(argc, argv, "s:np");
         if (ch == EOF) {

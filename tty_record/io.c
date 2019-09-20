@@ -37,7 +37,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-
 #include "ttyrec.h"
 
 #define SWAP_ENDIAN(val) ((unsigned int) ( \
@@ -46,8 +45,7 @@
     (((unsigned int) (val) & (unsigned int) 0x00ff0000U) >>  8) | \
     (((unsigned int) (val) & (unsigned int) 0xff000000U) >> 24)))
 
-static int 
-is_little_endian ()
+static int is_little_endian ()
 {
     static int retval = -1;
 
@@ -68,8 +66,7 @@ is_little_endian ()
     return retval;
 }
 
-static int
-convert_to_little_endian (int x)
+static int convert_to_little_endian (int x)
 {
     if (is_little_endian()) {
 	return x;
@@ -78,8 +75,7 @@ convert_to_little_endian (int x)
     }
 }
 
-int
-read_header (FILE *fp, Header *h)
+int read_header (FILE *fp, Header *h)
 {
     int buf[3];
 
@@ -94,8 +90,7 @@ read_header (FILE *fp, Header *h)
     return 1;
 }
 
-int
-write_header (FILE *fp, Header *h)
+int write_header (FILE *fp, Header *h)
 {
     int buf[3];
 
@@ -111,14 +106,12 @@ write_header (FILE *fp, Header *h)
 }
 
 static char *progname = "";
-void
-set_progname (const char *name)
+void set_progname (const char *name)
 {
     progname = strdup(name);
 }
 
-FILE *
-efopen (const char *path, const char *mode)
+FILE *efopen (const char *path, const char *mode)
 {
     FILE *fp = fopen(path, mode);
     if (fp == NULL) {

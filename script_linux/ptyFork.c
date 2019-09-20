@@ -15,7 +15,7 @@
 #define MAX_SNAME 1000
 
 pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios *slaveTermios,
-              const struct winsize *slaveWS) {
+                const struct winsize *slaveWS) {
     int mfd, slaveFd, savedErrno;
     pid_t childPid;
     char slname[MAX_SNAME];
@@ -100,7 +100,7 @@ pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios
         if (ioctl(slaveFd, TIOCSCTTY, slaveWS) == -1) {
             if (tcsetattr(slaveFd, TCSANOW, slaveTermios) == -1) {
                 printf("error ioctl(slaveFd, TIOCSCTTY, slaveWS)");
-                _exit(1);
+                exit(1);
             }
         }
     }
@@ -109,17 +109,17 @@ pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios
 
     if (dup2(slaveFd, STDIN_FILENO) != STDIN_FILENO) {
         printf("error dup2 STDIN_FILENO");
-        _exit(1);
+        exit(1);
     }
 
     if (dup2(slaveFd, STDOUT_FILENO) != STDOUT_FILENO) {
         printf("error dup2 STDOUT_FILENO");
-        _exit(1);
+        exit(1);
     }
 
     if (dup2(slaveFd, STDERR_FILENO) != STDERR_FILENO) {
         printf("error dup2 STDERR_FILENO");
-        _exit(1);
+        exit(1);
     }
 
     if(slaveFd > STDERR_FILENO) {

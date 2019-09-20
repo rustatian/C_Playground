@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <assert.h>
 
-#include "io.h"
-#include "ttyrec.h"
+#include "../../tty_replay/io.h"
+#include "../ttyrec.h"
 
 int calc_time (const char *filename)
 {

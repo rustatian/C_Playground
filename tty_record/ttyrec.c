@@ -103,9 +103,9 @@ int main(argc, argv) int argc; char *argv[];
         shell = "/bin/sh";
 
     //done
-//    getmaster();
+    getmaster();
     //done
-//    fixtty();
+    fixtty();
 
     ////
     (void) signal(SIGCHLD, finish);
@@ -285,14 +285,14 @@ void done() {
 }
 
 // get a pseudoterminal_master
-//void getmaster() {
-//    (void) tcgetattr(STDIN_FILENO, &tt); // /* Put the state of FD into *TERMIOS_P.  */ struct termios tt;
-//    (void) ioctl(STDIN_FILENO, TIOCGWINSZ, (char *)&win);
-//    if (openpty(&master, &slave, NULL, &tt, &win) < 0) {
-//        fprintf(stderr, _("openpty failed\n"));
-//        fail();
-//    }
-//}
+void getmaster() {
+    (void) tcgetattr(STDIN_FILENO, &tt); // /* Put the state of FD into *TERMIOS_P.  */ struct termios tt;
+    (void) ioctl(STDIN_FILENO, TIOCGWINSZ, (char *)&win);
+    if (openpty(&master, &slave, NULL, &tt, &win) < 0) {
+        fprintf(stderr, _("openpty failed\n"));
+        fail();
+    }
+}
 
 void getslave() {
     (void) setsid();
