@@ -164,8 +164,7 @@ void ttyskipall(FILE *fp) {
     ttyplay(fp, 0, ttyread, ttynowrite, ttynowait);
 }
 
-void ttyplayback(FILE *fp, double speed,
-                 ReadFunc read_func, WaitFunc wait_func) {
+void ttyplayback(FILE *fp, double speed, ReadFunc read_func, WaitFunc wait_func) {
     ttyplay(fp, speed, ttyread, ttywrite, wait_func);
 }
 

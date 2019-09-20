@@ -7,10 +7,15 @@
 #include "replay.h"
 
 
-//int main() {
-//    struct termios old, new;
-//
-//
-//
-//
-//}
+int main() {
+    struct termios old, new;
+
+    while(1) {
+
+
+
+        break;
+    }
+
+
+}
