@@ -1,8 +1,4 @@
-//
-// Created by valery on 16/09/2019.
-//
-
-#include <fcntl.h>
+]#include <fcntl.h>
 #include <termios.h>
 #include <sys/ioctl.h>
 #include "string.h"
@@ -42,6 +38,10 @@ pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios
 
     childPid = fork();
 
+    int piiiid;
+    piiiid = getpid();
+    printf("%d pid", piiiid);
+
     if (childPid == -1) {
         savedErrno = errno;
         close(mfd);
@@ -55,9 +55,17 @@ pid_t ptyFork(int *masterFd, char *slaveName, size_t snLen, const struct termios
     // and return PID for child (zero) from first process
     // BUT, as far as parent pid is not equal to 0 in that process we continue execution (child PID is equal to 0 in his process)
     if (childPid != 0) {
+        int piiiid3;
+        piiiid = getpid();
+        printf("%d pid", piiiid);
         *masterFd = mfd;
         return childPid;
     }
+
+    int piiiid2;
+    piiiid2 = getpid();
+    printf("%d pid", piiiid2);
+
 
     // for child execution continues
 
