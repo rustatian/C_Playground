@@ -15,3 +15,6 @@ MESSAGE("OpenCV version : ${OpenCV_VERSION}")
 
 add_executable(opencv_tests main.cpp)
 TARGET_LINK_LIBRARIES(opencv_tests ${OpenCV_LIBS} ${CONAN_LIBS} )
+
+add_executable(video video.cpp)
+TARGET_LINK_LIBRARIES(video ${OpenCV_LIBS} ${CONAN_LIBS} )
