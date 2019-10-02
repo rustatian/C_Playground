@@ -1,0 +1,4 @@
+Cannot generate into /Users/0xdev/Projects/repo/C_Playground/pids/cmake-build-debug-remote
+Cannot create directory
+
+Please either delete it manually or select another generation directory
