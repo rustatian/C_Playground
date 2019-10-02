@@ -6,6 +6,7 @@
 #define DEBUGGER_DEBUGGER_H
 
 #include <string>
+#include <vector>
 
 class debugger {
 public:
@@ -19,6 +20,8 @@ public:
 private:
     std::string m_prog_name;
     pid_t m_pid;
+
+    void continue_execution();
 };
 
 

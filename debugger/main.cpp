@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
         // exec debugee
 
         //PTRACE_TRACEME in linux systems
-        ptrace(PT_TRACE_ME, 0, nullptr, nullptr);
+        ptrace(PTRACE_TRACEME, 0, nullptr, nullptr);
         execl(prog, prog, nullptr);
 
     } else if (pid >= 1) {
@@ -32,10 +32,6 @@ int main(int argc, char *argv[]) {
     }
 
 
-}
-
-std::vector<std::string> split(const std::string &basicString, char i) {
-    return std::vector<std::string>();
 }
 
 

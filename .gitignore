@@ -58,6 +58,7 @@ c_rem/pointers/cmake-build-debug/*
 c_rem/phase_1/cmake-build-debug/*
 geeksforgeeks/course/cmake-build-debug/*
 debugger/cmake-build-debug
+debugger/cmake-build-debug-remote
 c_rem/pointers/cmake-build-remote/CMakeFiles/3.10.2/CompilerIdC/tmp/
 c_rem/pointers/cmake-build-remote/CMakeFiles/3.10.2/CompilerIdCXX/tmp/
 c_rem/pointers/cmake-build-remote/CMakeFiles/CMakeTmp/
