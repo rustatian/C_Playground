@@ -1,3 +1,0 @@
-/home/valery/Projects/repo/C_Playground/syscall/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/valery/Projects/repo/C_Playground/syscall/cmake-build-debug/CMakeFiles/syscall.dir
-/home/valery/Projects/repo/C_Playground/syscall/cmake-build-debug/CMakeFiles/edit_cache.dir
