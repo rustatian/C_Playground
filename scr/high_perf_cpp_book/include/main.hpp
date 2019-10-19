@@ -4,10 +4,16 @@
 
 #ifndef PLAYGROUND_MAIN_HPP
 #define PLAYGROUND_MAIN_HPP
+#include <set>
+#include <string>
+#include <iostream>
 
+class Bagel {
+public:
+    Bagel(const std::set<std::string> &ts) : toppings_(ts){}
 
-class main {
-
+private:
+    std::set<std::string> toppings_;
 };
 
 
