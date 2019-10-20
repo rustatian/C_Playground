@@ -1,0 +1,1 @@
+/usr/bin/cc -Os -DNDEBUG   CMakeFiles/tcp.dir/main.c.o  -o tcp 

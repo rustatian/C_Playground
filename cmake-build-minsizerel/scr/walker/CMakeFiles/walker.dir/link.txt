@@ -1,0 +1,1 @@
+/usr/bin/c++  -Os -DNDEBUG   CMakeFiles/walker.dir/walker.cpp.o  -o walker 

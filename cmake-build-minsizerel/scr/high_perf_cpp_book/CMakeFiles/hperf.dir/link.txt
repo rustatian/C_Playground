@@ -1,0 +1,1 @@
+/usr/bin/c++  -Os -DNDEBUG   CMakeFiles/hperf.dir/src/main.cpp.o  -o hperf 

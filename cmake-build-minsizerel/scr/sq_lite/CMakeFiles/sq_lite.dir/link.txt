@@ -1,0 +1,1 @@
+/usr/bin/cc -Os -DNDEBUG   CMakeFiles/sq_lite.dir/main.c.o  -o sq_lite 

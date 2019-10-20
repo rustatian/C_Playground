@@ -1,0 +1,1 @@
+/usr/bin/cc -Os -DNDEBUG   CMakeFiles/writing_os.dir/main.c.o  -o writing_os 

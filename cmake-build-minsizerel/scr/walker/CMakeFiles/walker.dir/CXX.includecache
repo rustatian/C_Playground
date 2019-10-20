@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/valery/Projects/repo/C_Playground/scr/walker/walker.cpp
+walker.hpp
+/home/valery/Projects/repo/C_Playground/scr/walker/walker.hpp
+string
+-
+iostream
+-
+filesystem
+-
+cstdio
+-
+unistd.h
+-
+cstring
+-
+
+/home/valery/Projects/repo/C_Playground/scr/walker/walker.hpp
+

@@ -1,0 +1,1 @@
+/usr/bin/cc -Os -DNDEBUG   CMakeFiles/main.h.dir/main.c.o  -o main.h 

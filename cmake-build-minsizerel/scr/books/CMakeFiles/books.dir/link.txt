@@ -1,0 +1,1 @@
+/usr/bin/cc -Os -DNDEBUG   CMakeFiles/books.dir/main.c.o  -o books 

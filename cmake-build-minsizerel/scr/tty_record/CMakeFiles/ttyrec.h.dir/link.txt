@@ -1,0 +1,1 @@
+/usr/bin/cc -Os -DNDEBUG   CMakeFiles/ttyrec.h.dir/ttyrec.c.o CMakeFiles/ttyrec.h.dir/io.c.o  -o ttyrec.h 
