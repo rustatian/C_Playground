@@ -35,4 +35,57 @@ public:
 private:
     Person leader_{};
 };
+
+
+class Engine {
+public:
+    auto set_oil_amount(float v) {
+        oil_ = v;
+    }
+    [[nodiscard]] float get_oil_amount() const {
+        return oil_;
+    }
+
+private:
+    float oil_ {};
+};
+
+class YamahaEngine : public Engine {
+
+};
+
+// copy semantics
+class Boat {
+public:
+    Boat(std::shared_ptr<Engine> e, float l) : engine_{e}, length_{l} {};
+    auto set_length(float l) {
+        length_ = l;
+    }
+    auto &get_engine() {
+        return engine_;
+    }
+private:
+    std::shared_ptr<Engine> engine_;
+    float length_{};
+};
+
+class Boat_without_copy {
+private:
+    Boat_without_copy(const Boat_without_copy& b) = delete; //noncopyable
+    //auto operator = (const Boat_without_copy&) -> Boat_without_copy& = delete; //trailing return
+    Boat_without_copy& operator = (const Boat_without_copy&) = delete; //noncopyable
+public:
+    Boat_without_copy(std::shared_ptr<Engine> e, float l) : engine_{e}, length_{l} {};
+    auto set_length(float l) {
+        length_ = l;
+    }
+    auto &get_engine() {
+        return engine_;
+    }
+private:
+    std::shared_ptr<Engine> engine_;
+    float length_{};
+};
+
+
 #endif //PLAYGROUND_MAIN_HPP

@@ -10,13 +10,28 @@ int main(int argc, char *argv[]) {
     auto t = std::set<std::string>{};
     t.insert("salt");
 
-    std::shared_ptr;
+    // a would have only pepper
     auto a = Bagel{t};
-
     t.insert("pepper");
 
+    // b would have salt, pepper
     auto b = Bagel{t};
     t.insert("oregano");
+
+
+    /// shared pointers
+    auto boat0 = Boat{std::make_shared<YamahaEngine>(), 6.7f};
+    auto boat1 = boat0;
+
+    boat1.set_length(8.56f);
+    boat1.get_engine()->set_oil_amount(3.4f);
+    // if we now change value in boat1 the value also has been changed in boat0, because
+    // of copy semantics
+
+
+    /// shared pointers with copy restricted
+    auto boat3 = Boat_without_copy{std::make_shared<YamahaEngine>(), 6.7f};
+    auto boat4 = boat3;
 }
 
 auto nonmutating_func(const std::vector<Team> &teams) {
