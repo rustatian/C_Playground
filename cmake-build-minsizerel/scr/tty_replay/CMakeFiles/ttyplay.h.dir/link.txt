@@ -1,1 +1,0 @@
-/usr/bin/cc -Os -DNDEBUG   CMakeFiles/ttyplay.h.dir/ttyplay.c.o CMakeFiles/ttyplay.h.dir/io.c.o  -o ttyplay.h 

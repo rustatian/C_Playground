@@ -1,1 +1,0 @@
-/usr/bin/cc -Os -DNDEBUG   CMakeFiles/ipc.dir/main.c.o  -o ipc 

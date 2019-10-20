@@ -1,1 +1,0 @@
-/usr/bin/cc -Os -DNDEBUG   CMakeFiles/memory_alloc.dir/main.c.o  -o memory_alloc 
