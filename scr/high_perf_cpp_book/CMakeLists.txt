@@ -1,3 +1,4 @@
 project(high_perf_cpp_book)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 add_executable(hperf src/main.cpp include/main.hpp)
+add_executable(prvs src/preserving_the_valid_state.cpp include/preserving_the_valid_state.hpp)

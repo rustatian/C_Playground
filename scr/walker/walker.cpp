@@ -15,8 +15,8 @@ void run_git_command(const std::string &command, const std::string &root) {
         if (entry.is_directory()) {
             std::cout << "entering dir: " << entry << std::endl;
 
-            // copy the string
             char cstr[entry.path().string().size() + 1];
+            // copy the string
             strcpy(cstr, entry.path().string().c_str());
 
             try {

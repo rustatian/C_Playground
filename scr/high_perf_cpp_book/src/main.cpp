@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
 
     /// shared pointers with copy restricted
     auto boat3 = Boat_without_copy{std::make_shared<YamahaEngine>(), 6.7f};
-    auto boat4 = boat3;
+    //auto boat4 = boat3;
 }
 
 auto nonmutating_func(const std::vector<Team> &teams) {
