@@ -5,9 +5,6 @@
 #include <mutex>
 #include "../include/recource_acquisition.hpp"
 
-int main() {
-
-}
 
 // lifetime of objects
 auto func(std::mutex &m, int val, bool b) {
@@ -24,6 +21,42 @@ auto func(std::mutex &m, int val, bool b) {
     // also auto release here
 }
 
-auto val() const -> int {
+auto mref() -> int & {
 
+}
+
+auto &mrefw() {
+    int a = 5;
+
+    return a;
+}
+
+auto func(const std::string &a, const std::string &b) {
+    const auto &str = a + b;
+}
+
+struct Foo {
+    // just value
+    auto val() const {
+        return m_;
+    }
+
+    // const reference
+    auto &cref() const {
+        return m_;
+    }
+
+    // mutable reference
+    // cannot bind to a temporary
+    auto &mref() {
+        return m_;
+    }
+
+    int m_{};
+};
+
+int main() {
+    auto foo = Foo{};
+    auto &cref = foo.cref();
+    auto &mref = foo.mref();
 }
