@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.14)
 project(playground)
 set(CMAKE_CXX_STANDARD 17)
+
+find_package(Boost 1.71 COMPONENTS program_options REQUIRED)
+find_package(Threads)
+
+include_directories( ${Boost_INCLUDE_DIR} )
+
 add_subdirectory(src/books)
 add_subdirectory(src/c_rem)
 add_subdirectory(src/compiler)
@@ -22,3 +28,4 @@ add_subdirectory(src/tty_replay)
 add_subdirectory(src/writing_os)
 add_subdirectory(src/high_perf_cpp_book)
 add_subdirectory(src/walker)
+add_subdirectory(src/boost_learn)

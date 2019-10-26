@@ -2,7 +2,7 @@
 // Created by Valery Piashchynski on 10/19/19.
 //
 
-#ifndef PLAYGROUND_MAIN_HPP
+#ifndef PLAYGROUND_CLIENT_HPP
 #define PLAYGROUND_MAIN_HPP
 #include <set>
 #include <string>
@@ -88,4 +88,4 @@ private:
 };
 
 
-#endif //PLAYGROUND_MAIN_HPP
+#endif //PLAYGROUND_CLIENT_HPP
