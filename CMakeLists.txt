@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.14)
 project(playground)
 set(CMAKE_CXX_STANDARD 17)
 
-find_package(Boost 1.71 COMPONENTS program_options REQUIRED)
+find_package(Boost 1.71 COMPONENTS REQUIRED)
 find_package(Threads)
 
 include_directories( ${Boost_INCLUDE_DIR} )

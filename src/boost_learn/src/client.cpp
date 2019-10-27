@@ -4,10 +4,19 @@
 
 #include <string>
 #include <boost/system/error_code.hpp>
-#include <asio/ip/address.hpp>
 #include "../include/client.hpp"
 #include <iostream>
+
+#ifdef __APPLE__
+
+#include <boost/asio/ip/tcp.hpp>
+#include <boost/asio/ip/address.hpp>
+
+#endif
+#ifdef __LINUX__
 #include <asio/ip/tcp.hpp>
+#include <asio/ip/address.hpp>
+#endif
 
 // clien endpoint
 int main() {
@@ -16,10 +25,10 @@ int main() {
     unsigned short port_num = 3333;
 
     //used to store info about error
-    asio::error_code ec;
+    boost::system::error_code ec;
 
-    asio::ip::address ip_address =
-            asio::ip::address::from_string(raw_ip_address, ec);
+    boost::asio::ip::address ip_address =
+            boost::asio::ip::address::from_string(raw_ip_address, ec);
 
     if (ec.value() != 0) {
         std::cout << "failed to parse ip address" <<
@@ -27,7 +36,7 @@ int main() {
                   ec.message() << std::endl;
     }
     //step 3
-    asio::ip::tcp::endpoint ep(ip_address, port_num);
+    boost::asio::ip::tcp::endpoint ep(ip_address, port_num);
 
     // now endpoint are ready
     return 0;
