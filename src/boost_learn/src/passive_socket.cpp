@@ -7,9 +7,10 @@
 #include <iostream>
 
 
+// dns resolver
 int dns() {
-    std::string host = "samplehost.com";
-    std::string port_num = "3333";
+    std::string host = "google.com";
+    std::string port_num = "80";
 
     boost::asio::io_service ios;
 
@@ -17,6 +18,7 @@ int dns() {
             host,
             port_num,
             boost::asio::ip::tcp::resolver::query::numeric_service);
+
     boost::system::error_code ec;
     boost::asio::ip::tcp::resolver resolver(ios);
 
@@ -31,8 +33,16 @@ int dns() {
         return ec.value();
     }
 
+    boost::asio::ip::tcp::resolver::iterator it_end;
+
+    for (; it != it_end; ++it) {
+        boost::asio::ip::tcp::endpoint ep = (*it).endpoint();
+    }
+
     return 0;
 }
+
+
 
 int main() {
     boost::asio::io_service ios;
