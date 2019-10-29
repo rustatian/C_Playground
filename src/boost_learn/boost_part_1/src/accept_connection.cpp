@@ -17,7 +17,7 @@ int main() {
     boost::asio::ip::tcp::acceptor acceptor(ioc, ep.protocol());
 
     acceptor.bind(ep);
-    acceptor.listen(30);
+    acceptor.listen();
 
     boost::asio::ip::tcp::socket sock(ioc, ep.protocol());
 
