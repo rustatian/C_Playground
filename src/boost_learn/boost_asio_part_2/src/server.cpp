@@ -23,7 +23,6 @@ void sync_server() {
 
     acceptor.bind(ep);
     acceptor.listen(30);
-    boost::asio::ip::tcp::socket sock(ioc, ep.protocol());
 
     try {
         boost::asio::ip::tcp::socket accepted_socket = acceptor.accept();
@@ -48,5 +47,5 @@ void async_server() {
 }
 
 int main() {
-
+    sync_server();
 }
