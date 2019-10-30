@@ -10,7 +10,7 @@
 #include <boost/asio/read_until.hpp>
 #include "../include/server.hpp"
 
-int main() {
+void sync_server() {
     std::string ip_address = "127.0.0.1";
     unsigned short port_num = 3333;
 
@@ -27,15 +27,26 @@ int main() {
 
     try {
         boost::asio::ip::tcp::socket accepted_socket = acceptor.accept();
-        boost::asio::streambuf response;
+        std::size_t available = accepted_socket.available();
 
-        size_t s = boost::asio::read_until(accepted_socket, response, EOF);
+        std::cout << "data available is: " << available << std::endl;
+
+        char buf[available];
+
+        size_t s = accepted_socket.read_some(boost::asio::buffer(buf, available));
         std::cout << "received size is: " << s << std::endl;
         std::cout << "error message: " << ec.message() << std::endl;
-//        std::cout << "data is: " << static_cast<std::string*>(buf.data()) << std::endl;
+        std::cout << "data is: " << std::string(buf, available) << std::endl;
 
     } catch (boost::system::error_code &e) {
         std::cout << e.value() << "message: " << e.message();
     }
+}
+
+void async_server() {
+
+}
+
+int main() {
 
 }
