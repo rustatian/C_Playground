@@ -13,8 +13,8 @@
 struct ReadData {
     std::shared_ptr<boost::asio::ip::tcp::socket> sock;
     std::unique_ptr<char[]> buf;
-    std::size_t buffer_size;
-    std::size_t bytes_read;
+    std::size_t total_bytes_read;
+    unsigned int buf_size;
 };
 
 void sync_server() {
@@ -49,11 +49,33 @@ void sync_server() {
 }
 
 void read_handler(const boost::system::error_code &ec, std::size_t bytes_transferred,
-                  std::shared_ptr<boost::asio::ip::tcp::socket> s, std::unique_ptr<char[]> data) {
+                  std::shared_ptr<ReadData> rd) {
+
+}
+
+void readFromSocket(std::shared_ptr<boost::asio::ip::tcp::socket> s) {
 
 }
 
 void async_server() {
+    unsigned short port_num = 3333;
+
+    boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address_v4::any(), port_num);
+    boost::asio::io_context ioc;
+
+    std::shared_ptr<boost::asio::ip::tcp::socket> sock(
+            new boost::asio::ip::tcp::socket(ioc, ep.protocol()));
+
+    std::shared_ptr<ReadData> rd(new ReadData);
+
+    try {
+        sock->connect(ep);
+
+        ioc.run();
+
+    } catch (boost::system::error_code &ec) {
+
+    }
 
 }
 
