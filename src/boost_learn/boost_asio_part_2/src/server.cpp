@@ -34,7 +34,6 @@ void sync_server() {
 
         size_t s = accepted_socket.read_some(boost::asio::buffer(buf, available));
         std::cout << "received size is: " << s << std::endl;
-        std::cout << "error message: " << ec.message() << std::endl;
         std::cout << "data is: " << std::string(buf, available) << std::endl;
 
     } catch (boost::system::error_code &e) {

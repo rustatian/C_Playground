@@ -46,7 +46,7 @@ struct SendData {
 void async_write_handler(
         const boost::system::error_code &ec,
         std::size_t bytes_transferred,
-        const std::shared_ptr<SendData>& s) {
+        const std::shared_ptr<SendData> &s) {
 
     if (ec.value() != 0) {
         std::cout << "Error code is: " << ec.value() << "Message is: " << ec.message() << std::endl;
