@@ -9,13 +9,12 @@
 #include "../include/client.hpp"
 
 void sync_write() {
-    std::string ip_address = "127.0.0.1";
+//    std::string ip_address = "127.0.0.1";
     unsigned short port_num = 3333;
 
 
     boost::asio::io_context ioc;
-    boost::asio::ip::tcp::endpoint ep(
-            boost::asio::ip::address::from_string(ip_address),
+    boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address_v4::any(),
             port_num);
 
 
@@ -98,13 +97,13 @@ void writeToSocket(std::shared_ptr<boost::asio::ip::tcp::socket> sock) {
 int main() {
     auto t = array_t<4, int>();
 
-    std::string ip_address = "127.0.0.1";
+//    std::string ip_address = "127.0.0.1";
     unsigned short port_number = 3333;
 
     boost::asio::io_context ioc;
 
     boost::asio::ip::tcp::endpoint ep(
-            boost::asio::ip::address::from_string(ip_address),
+            boost::asio::ip::address_v4::any(),
             port_number);
 
 

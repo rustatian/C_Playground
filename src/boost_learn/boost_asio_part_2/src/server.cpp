@@ -10,12 +10,19 @@
 #include <boost/asio/read_until.hpp>
 #include "../include/server.hpp"
 
+struct ReadData {
+    std::shared_ptr<boost::asio::ip::tcp::socket> sock;
+    std::unique_ptr<char[]> buf;
+    std::size_t buffer_size;
+    std::size_t bytes_read;
+};
+
 void sync_server() {
-    std::string ip_address = "127.0.0.1";
+//    std::string ip_address = "0.0.0.0";
     unsigned short port_num = 3333;
 
     boost::asio::io_context ioc;
-    boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address::from_string(ip_address), port_num);
+    boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address_v4::any(), port_num);
 
 
     boost::system::error_code ec;
@@ -39,6 +46,11 @@ void sync_server() {
     } catch (boost::system::error_code &e) {
         std::cout << e.value() << "message: " << e.message();
     }
+}
+
+void read_handler(const boost::system::error_code &ec, std::size_t bytes_transferred,
+                  std::shared_ptr<boost::asio::ip::tcp::socket> s, std::unique_ptr<char[]> data) {
+
 }
 
 void async_server() {
