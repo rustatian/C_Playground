@@ -1,9 +1,18 @@
 cmake_minimum_required(VERSION 3.14)
 project(playground)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 find_package(Boost 1.71 COMPONENTS REQUIRED)
 find_package(Threads)
+
+find_program(CCACHE_FOUND ccache)
+if(CCACHE_FOUND)
+    message("CCACHE FOUND")
+    SET_PROPERTY(GLOBAL PROPERTY RULE_LAUNCH_COMPILE ccache)
+    SET_PROPERTY(GLOBAL PROPERTY RULE_LAUNCH_LINK ccache)
+endif(CCACHE_FOUND)
 
 include_directories( ${Boost_INCLUDE_DIR} )
 
@@ -16,7 +25,6 @@ add_subdirectory(src/http_server)
 add_subdirectory(src/ipc)
 add_subdirectory(src/linux_sources)
 add_subdirectory(src/memory_alloc)
-add_subdirectory(src/opencv_tests)
 add_subdirectory(src/pids)
 add_subdirectory(src/script_linux)
 add_subdirectory(src/sq_lite)
@@ -30,3 +38,4 @@ add_subdirectory(src/high_perf_cpp_book)
 add_subdirectory(src/walker)
 add_subdirectory(src/boost_learn/boost_part_1)
 add_subdirectory(src/boost_learn/boost_asio_part_2)
+add_subdirectory(src/kernel_experiments)

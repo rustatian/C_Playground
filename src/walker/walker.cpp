@@ -13,7 +13,7 @@
 #include <future>
 
 void process_git_request(const std::filesystem::directory_entry &entry, const std::string &command) {
-    std::cout << "entering dir: " << entry << std::endl;
+    std::cout << "entering dir: " << entry.path().string() << std::endl;
 
     char cstr[entry.path().string().size() + 1];
     // copy the string
@@ -48,7 +48,7 @@ void process_git_request(const std::filesystem::directory_entry &entry, const st
     }
 
     // print the result
-    std::cout << "dir: " << entry << " result: " << result << std::endl;
+    std::cout << "dir: " << entry.path().string() << " result: " << result << std::endl;
 
     try {
         pclose(pipe);
