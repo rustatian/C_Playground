@@ -8,6 +8,7 @@
 #include <boost/asio/read.hpp>
 #include <boost/asio/streambuf.hpp>
 #include <boost/asio/read_until.hpp>
+#include <thread>
 #include "../include/server.hpp"
 
 struct ReadData {
@@ -49,7 +50,7 @@ void sync_server() {
 }
 
 void read_handler(const boost::system::error_code &ec, std::size_t bytes_transferred,
-                  std::shared_ptr<ReadData> rd) {
+                  const std::shared_ptr<ReadData> &rd) {
     if (ec.value() != 0) {
         std::cout << "Error code is: " << ec.value() << "Message is: " << ec.message() << std::endl;
         return;
@@ -91,9 +92,23 @@ void async_server() {
 
         sock->async_connect(ep,
                             [sock](const boost::system::error_code &ec) {
-
-
+                                if (ec.value() != 0) {
+                                    if (ec == boost::asio::error::operation_aborted) {
+                                        std::cout << "Operation cancelled" << std::endl;
+                                    } else {
+                                        std::cout << "Error code is: " << ec.value() << "Message is: " << ec.message()
+                                                  << std::endl;
+                                        return;
+                                    }
+                                }
                             });
+
+        std::thread worker_thread([&ioc]() {
+            try {
+                // just sample
+                ioc.run();
+            }
+        });
         // allocate a buffer
         const unsigned int MESSAGE_SIZE = 7;
         rd->buf.reset(new char[MESSAGE_SIZE]);
