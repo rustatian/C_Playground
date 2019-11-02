@@ -50,11 +50,45 @@ void sync_server() {
 
 void read_handler(const boost::system::error_code &ec, std::size_t bytes_transferred,
                   std::shared_ptr<ReadData> rd) {
+    if (ec.value() != 0) {
+        std::cout << "Error code is: " << ec.value() << "Message is: " << ec.message() << std::endl;
+        return;
+    }
 
+    rd->total_bytes_read += bytes_transferred;
+
+    if (rd->total_bytes_read == rd->buf_size) {
+        return;
+    }
+
+//    std::function<void(const boost::system::error_code,
+//                       std::size_t,
+//                       std::shared_ptr<ReadData>)> m_read_handler;
+
+//    auto m_read_handler = [=]() {
+//        read_handler(std::placeholders::_1,std::placeholders::_2,std::placeholders::_3);
+//    };
+
+    rd->sock->async_read_some(
+            boost::asio::buffer(rd->buf.get(), rd->buf_size),
+            std::bind(read_handler, std::placeholders::_1, std::placeholders::_2, rd));
 }
 
-void readFromSocket(std::shared_ptr<boost::asio::ip::tcp::socket> s) {
 
+void readFromSocket(std::shared_ptr<boost::asio::ip::tcp::socket> s) {
+    std::shared_ptr<ReadData> rd(new ReadData);
+
+    // allocate a buffer
+    const unsigned int MESSAGE_SIZE = 7;
+    rd->buf.reset(new char[MESSAGE_SIZE]);
+    rd->sock = std::move(s);
+    rd->total_bytes_read = 0;
+    rd->buf_size = MESSAGE_SIZE;
+
+    rd->sock->async_read_some(
+            boost::asio::buffer(rd->buf.get(), rd->buf_size),
+            std::bind(read_handler, std::placeholders::_1, std::placeholders::_2, rd)
+    );
 }
 
 void async_server() {
@@ -70,7 +104,7 @@ void async_server() {
 
     try {
         sock->connect(ep);
-
+        readFromSocket(sock);
         ioc.run();
 
     } catch (boost::system::error_code &ec) {
@@ -80,5 +114,5 @@ void async_server() {
 }
 
 int main() {
-    sync_server();
+    async_server();
 }
