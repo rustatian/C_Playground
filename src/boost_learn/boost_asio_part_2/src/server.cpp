@@ -75,22 +75,6 @@ void read_handler(const boost::system::error_code &ec, std::size_t bytes_transfe
 }
 
 
-void readFromSocket(std::shared_ptr<boost::asio::ip::tcp::socket> s) {
-    std::shared_ptr<ReadData> rd(new ReadData);
-
-    // allocate a buffer
-    const unsigned int MESSAGE_SIZE = 7;
-    rd->buf.reset(new char[MESSAGE_SIZE]);
-    rd->sock = std::move(s);
-    rd->total_bytes_read = 0;
-    rd->buf_size = MESSAGE_SIZE;
-
-    rd->sock->async_read_some(
-            boost::asio::buffer(rd->buf.get(), rd->buf_size),
-            std::bind(read_handler, std::placeholders::_1, std::placeholders::_2, rd)
-    );
-}
-
 void async_server() {
     unsigned short port_num = 3333;
 
@@ -103,8 +87,25 @@ void async_server() {
     std::shared_ptr<ReadData> rd(new ReadData);
 
     try {
-        sock->connect(ep);
-        readFromSocket(sock);
+//        sock->connect(ep);
+
+        sock->async_connect(ep,
+                            [sock](const boost::system::error_code &ec) {
+
+
+                            });
+        // allocate a buffer
+        const unsigned int MESSAGE_SIZE = 7;
+        rd->buf.reset(new char[MESSAGE_SIZE]);
+        rd->sock = std::move(sock);
+        rd->total_bytes_read = 0;
+        rd->buf_size = MESSAGE_SIZE;
+
+        rd->sock->async_read_some(
+                boost::asio::buffer(rd->buf.get(), rd->buf_size),
+                std::bind(read_handler, std::placeholders::_1, std::placeholders::_2, rd)
+        );
+
         ioc.run();
 
     } catch (boost::system::error_code &ec) {
