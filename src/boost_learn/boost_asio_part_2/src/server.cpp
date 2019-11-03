@@ -92,7 +92,7 @@ void async_server() {
 //        sock->connect(ep);
 
         sock->async_connect(ep,
-                            [sock](const boost::system::error_code &ec) {
+                            [sock](const boost::system::error_code &ec) noexcept {
                                 if (ec.value() != 0) {
                                     if (ec == boost::asio::error::operation_aborted) {
                                         std::cout << "Operation cancelled" << std::endl;
@@ -108,28 +108,37 @@ void async_server() {
             try {
                 // just sample
                 ioc.run();
-            } catch (...) {
-
+            } catch (boost::system::system_error &e) {
+                std::cout << "Error occured!"
+                          << " Error code = " << e.code()
+                          << ". Message: " << e.what();
             }
         });
+
+        std::this_thread::sleep_for(std::chrono::seconds(10));
+
+        sock->cancel();
+
+        worker_thread.join();
         // allocate a buffer
-        const unsigned int MESSAGE_SIZE = 7;
-        rd->buf.reset(new char[MESSAGE_SIZE]);
-        rd->sock = std::move(sock);
-        rd->total_bytes_read = 0;
-        rd->buf_size = MESSAGE_SIZE;
-
-        rd->sock->async_read_some(
-                boost::asio::buffer(rd->buf.get(), rd->buf_size),
-                std::bind(read_handler, std::placeholders::_1, std::placeholders::_2, rd)
-        );
-
-        ioc.run();
+//        const unsigned int MESSAGE_SIZE = 7;
+//        rd->buf.reset(new char[MESSAGE_SIZE]);
+//        rd->sock = std::move(sock);
+//        rd->total_bytes_read = 0;
+//        rd->buf_size = MESSAGE_SIZE;
+//
+//        rd->sock->async_read_some(
+//                boost::asio::buffer(rd->buf.get(), rd->buf_size),
+//                std::bind(read_handler, std::placeholders::_1, std::placeholders::_2, rd)
+//        );
+//
+//        ioc.run();
 
     } catch (boost::system::error_code &ec) {
+        std::cout << "Error occured! Error code = " << ec.value()
+                  << ". Message: " << ec.message();
 
     }
-
 }
 
 int main() {
