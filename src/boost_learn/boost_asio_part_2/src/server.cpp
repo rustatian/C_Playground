@@ -9,6 +9,7 @@
 #include <boost/asio/streambuf.hpp>
 #include <boost/asio/read_until.hpp>
 #include <thread>
+#include <boost/asio/write.hpp>
 #include "../include/server.hpp"
 
 struct ReadData {
@@ -141,6 +142,44 @@ void async_server() {
     }
 }
 
+// new approach with shutdown
+void processReq(boost::asio::ip::tcp::socket &sock) {
+    boost::asio::basic_streambuf request_buf;
+    boost::system::error_code ec;
+    boost::asio::read(sock, request_buf, ec);
+
+    if (ec != boost::asio::error::eof) {
+        throw boost::system::system_error(ec);
+    }
+
+    const char response_buf[] = {0x48, 0x69, 0x21};
+    boost::asio::write(sock, boost::asio::buffer(response_buf));
+
+    // let know the client that we've sent the whole resp
+    sock.shutdown(boost::asio::socket_base::shutdown_send);
+}
+
 int main() {
+    unsigned short port_num = 3333;
+    try {
+        boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address_v4::any(),
+                                   port_num);
+
+        boost::asio::io_context ioc;
+        boost::asio::ip::tcp::acceptor acceptor(ioc, ep.protocol());
+
+        acceptor.bind(ep);
+        acceptor.listen();
+
+        boost::asio::ip::tcp::socket sock = acceptor.accept();
+
+        processReq(sock);
+    }
+    catch (boost::system::system_error &e) {
+        std::cout << "Error occured! Error code = " << e.code()
+                  << ". Message: " << e.what();
+
+        return e.code().value();
+    }
 
 }

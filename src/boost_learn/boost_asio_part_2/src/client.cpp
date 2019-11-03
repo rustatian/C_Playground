@@ -125,6 +125,7 @@ void async_write() {
     }
 }
 
+// new approach with shutdown
 void communicate(boost::asio::ip::tcp::socket &sock) {
     // allocate the buffer
     const char request_buf[] = {0x48, 0x65, 0x0, 0x6c, 0x6c, 0x6f};
@@ -162,12 +163,7 @@ int main() {
 
         boost::asio::io_context ioc;
 
-        boost::asio::ip::tcp::acceptor acceptor(ioc, ep);
-
-        acceptor.bind(ep);
-        acceptor.listen();
-
-        boost::asio::ip::tcp::socket sock = acceptor.accept();
+        boost::asio::ip::tcp::socket sock(ioc, ep.protocol());
 
         sock.connect(ep);
 
