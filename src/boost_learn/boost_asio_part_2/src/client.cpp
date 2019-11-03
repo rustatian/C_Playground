@@ -6,6 +6,9 @@
 #include <boost/asio/ip/tcp.hpp>
 #include <iostream>
 #include <utility>
+#include <boost/asio/write.hpp>
+#include <boost/asio/streambuf.hpp>
+#include <boost/asio/read.hpp>
 #include "../include/client.hpp"
 
 void sync_write() {
@@ -15,7 +18,7 @@ void sync_write() {
 
     boost::asio::io_context ioc;
     boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address_v4::any(),
-            port_num);
+                                      port_num);
 
 
     boost::asio::ip::tcp::socket socket(ioc, ep.protocol());
@@ -94,7 +97,7 @@ void writeToSocket(std::shared_ptr<boost::asio::ip::tcp::socket> sock) {
             std::bind(async_write_handler, std::placeholders::_1, std::placeholders::_2, s));
 }
 
-int main() {
+void async_write() {
     auto t = array_t<4, int>();
 
 //    std::string ip_address = "127.0.0.1";
@@ -120,5 +123,38 @@ int main() {
     } catch (boost::system::error_code &ec) {
         std::cout << "Error code: " << ec.value() << " Message: " << ec.message() << std::endl;
     }
+}
+
+void communicate(boost::asio::ip::tcp::socket &sock) {
+    // allocate the buffer
+    const char request_buf[] = {0x48, 0x65, 0x0, 0x6c, 0x6c, 0x6f};
+
+    //send the request
+    boost::asio::write(sock, boost::asio::buffer(request_buf));
+
+    // shutting down the socket to let
+    // the server know that we've sent the whole request
+    sock.shutdown(boost::asio::socket_base::shutdown_send);
+
+
+    // extensible buffer
+
+    boost::asio::streambuf response_buf;
+
+    boost::system::error_code ec;
+    boost::asio::read(sock, response_buf, ec);
+
+    if (ec == boost::asio::error::eof) {
+        // Whole response message has been received.
+        // Here we can handle it.
+    }
+    else {
+        throw boost::system::system_error(ec);
+    }
+}
+
+
+int main() {
+
 }
 
