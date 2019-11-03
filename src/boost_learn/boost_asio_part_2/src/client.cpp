@@ -147,14 +147,65 @@ void communicate(boost::asio::ip::tcp::socket &sock) {
     if (ec == boost::asio::error::eof) {
         // Whole response message has been received.
         // Here we can handle it.
-    }
-    else {
+    } else {
         throw boost::system::system_error(ec);
     }
 }
 
 
 int main() {
+    std::string raw_ip_address = "127.0.0.1";
+    unsigned short port_num = 3333;
 
+    try {
+        boost::asio::ip::tcp::endpoint ep(boost::asio::ip::address::from_string(raw_ip_address), port_num);
+
+        boost::asio::io_context ioc;
+
+        boost::asio::ip::tcp::acceptor acceptor(ioc, ep);
+
+        acceptor.bind(ep);
+        acceptor.listen();
+
+        boost::asio::ip::tcp::socket sock = acceptor.accept();
+
+        sock.connect(ep);
+
+        communicate(sock);
+    } catch (boost::system::error_code &e) {
+        std::cout << "error message is: " << e.message() << "error code is: " << e.value();
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
