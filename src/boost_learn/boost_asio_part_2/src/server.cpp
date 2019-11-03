@@ -67,8 +67,9 @@ void read_handler(const boost::system::error_code &ec, std::size_t bytes_transfe
 //                       std::shared_ptr<ReadData>)> m_read_handler;
 
 //    auto m_read_handler = [=]() {
-//        read_handler(std::placeholders::_1,std::placeholders::_2,std::placeholders::_3);
+//        return read_handler(std::placeholders::_1,std::placeholders::_2,std::placeholders::_3);
 //    };
+
 
     rd->sock->async_read_some(
             boost::asio::buffer(rd->buf.get(), rd->buf_size),
@@ -107,6 +108,8 @@ void async_server() {
             try {
                 // just sample
                 ioc.run();
+            } catch (...) {
+
             }
         });
         // allocate a buffer
