@@ -56,9 +56,7 @@ private:
     boost::asio::ip::tcp::socket sock_;
 };
 
-
-int main()
-{
+size_t sync_client_run() {
     const std::string raw_ip_address = "127.0.0.1";
     const unsigned short port_num = 3333;
 
@@ -88,4 +86,9 @@ int main()
     }
 
     return 0;
+}
+
+int main() {
+
+
 }
