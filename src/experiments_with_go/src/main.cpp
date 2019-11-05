@@ -5,10 +5,9 @@
 #include <iostream>
 #include "../include/main.hpp"
 #include "../include/awesome.h"
-#include <benchmark/benchmark.h>
+//#include <benchmark/benchmark.h>
 
-
-static void BM_GOlangInvokation(benchmark::State &state) {
+int main() {
     GoInt a = 12;
     GoInt b = 99;
 
@@ -19,6 +18,17 @@ static void BM_GOlangInvokation(benchmark::State &state) {
     std::cout << "result: " << c << std::endl;
 }
 
-BENCHMARK(BM_GOlangInvokation);
+//static void BM_GOlangInvokation(benchmark::State &state) {
+//    GoInt a = 12;
+//    GoInt b = 99;
+//
+//    std::cout << "invoking..." << std::endl;
+//
+//    auto c = Add(a, b);
+//
+//    std::cout << "result: " << c << std::endl;
+//}
 
-BENCHMARK_MAIN();
+//BENCHMARK(BM_GOlangInvokation);
+//
+//BENCHMARK_MAIN();

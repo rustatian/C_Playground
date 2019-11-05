@@ -11,6 +11,7 @@
 #include "../include/client.hpp"
 #include <iostream>
 
+// SYNC CLIENT
 class SyncTCPClient {
 public:
     SyncTCPClient(const std::string &raw_ip_address, unsigned short port_num) :
@@ -87,6 +88,14 @@ size_t sync_client_run() {
 
     return 0;
 }
+
+// ASYNC CLIENT
+
+typedef void(*Callback)(
+        unsigned int request_id, 
+        const std::string &response, 
+        const boost::system::error_code &ec);
+
 
 int main() {
 
