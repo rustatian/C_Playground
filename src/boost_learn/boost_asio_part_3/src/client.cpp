@@ -10,6 +10,8 @@
 #include <boost/asio/read_until.hpp>
 #include "../include/client.hpp"
 #include <iostream>
+#include <boost/asio/streambuf.hpp>
+#include <mutex>
 
 // SYNC CLIENT
 class SyncTCPClient {
@@ -90,12 +92,29 @@ size_t sync_client_run() {
 }
 
 // ASYNC CLIENT
-
+// callback
 typedef void(*Callback)(
-        unsigned int request_id, 
-        const std::string &response, 
+        unsigned int request_id,
+        const std::string &response,
         const boost::system::error_code &ec);
 
+struct Session {
+    boost::asio::ip::tcp::socket m_sock;
+    boost::asio::ip::tcp::endpoint m_ep;
+    std::string m_request;
+
+    boost::asio::streambuf m_response_buf;
+    std::string m_response;
+
+    boost::system::error_code m_ec;
+
+    unsigned int m_id; //unique id
+
+    Callback m_callback;
+
+    bool m_was_cancelled;
+    std::mutex m_cancel_guard;
+};
 
 int main() {
 
