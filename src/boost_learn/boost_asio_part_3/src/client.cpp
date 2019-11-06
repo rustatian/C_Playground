@@ -2,15 +2,18 @@
 // Created by valery on 11/3/19.
 //
 
+#include <memory>
 #include <string_view>
 #include <boost/asio/ip/address.hpp>
 #include <boost/asio/ip/tcp.hpp>
+#include <utility>
 #include <boost/asio/write.hpp>
 #include <boost/asio/basic_streambuf.hpp>
 #include <boost/asio/read_until.hpp>
 #include "../include/client.hpp"
 #include <iostream>
 #include <boost/asio/streambuf.hpp>
+#include <boost/core/noncopyable.hpp>
 #include <mutex>
 
 // SYNC CLIENT
@@ -99,6 +102,16 @@ typedef void(*Callback)(
         const boost::system::error_code &ec);
 
 struct Session {
+    Session(boost::asio::io_context &ioc, const std::string &raw_ip_address, unsigned short port_num,
+            std::string request, unsigned int id, Callback callback) :
+            m_sock(ioc),
+            m_ep(boost::asio::ip::address::from_string(raw_ip_address), port_num),
+            m_request(std::move(request)),
+            m_id(id),
+            m_callback(callback),
+            m_was_cancelled(false) {}
+
+
     boost::asio::ip::tcp::socket m_sock;
     boost::asio::ip::tcp::endpoint m_ep;
     std::string m_request;
@@ -115,6 +128,34 @@ struct Session {
     bool m_was_cancelled;
     std::mutex m_cancel_guard;
 };
+
+class AsyncTCPClient : public boost::noncopyable {
+public:
+    AsyncTCPClient() {
+        m_work = std::make_unique<boost::asio::io_context::work>(m_ioc);
+        m_thread = std::make_unique<std::thread>([this]() {
+            m_ioc.run();
+        });
+    }
+
+    void emulateLongComputationOp(
+            unsigned int duration_sec,
+            const std::string &raw_ip_address,
+            unsigned short port_num,
+            Callback callback,
+            unsigned int request_id
+    ) {
+        // prepare the req string
+    }
+
+private:
+    boost::asio::io_context m_ioc;
+    std::map<int, std::shared_ptr<Session>> m_active_sessions;
+    std::mutex m_active_session_guard;
+    std::unique_ptr<boost::asio::io_context::work> m_work;
+    std::unique_ptr<std::thread> m_thread;
+};
+
 
 int main() {
 
