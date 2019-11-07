@@ -38,7 +38,7 @@ public:
 
     std::string emulateLongComputationOp(unsigned int duration_sec) {
         std::string request = "EMULATE_LONG_COMP_OP" + std::to_string(duration_sec) + "\n";
-
+        return request;
     }
 
 private:
@@ -133,11 +133,11 @@ struct Session {
 class AsyncTCPClient : public boost::noncopyable {
 public:
     AsyncTCPClient() {
-        m_work.reset(new boost::asio::io_context::work(m_ios));
+        m_work = std::make_unique<boost::asio::io_context::work>(m_ios);
 
-        m_thread.reset(new std::thread([this]() {
+        m_thread = std::make_unique<std::thread>([this]() {
             m_ios.run();
-        }));
+        });
     }
 
     void emulateLongComputationOp(
@@ -153,12 +153,13 @@ public:
                               + "\n";
 
         std::shared_ptr<Session> session =
-                std::shared_ptr<Session>(new Session(m_ios,
-                                                     raw_ip_address,
-                                                     port_num,
-                                                     request,
-                                                     request_id,
-                                                     callback));
+                std::make_shared<Session>(
+                        m_ios,
+                        raw_ip_address,
+                        port_num,
+                        request,
+                        request_id,
+                        callback);
 
         session->m_sock.open(session->m_ep.protocol());
 
@@ -191,40 +192,43 @@ public:
 
                                           boost::asio::async_write(session->m_sock,
                                                                    boost::asio::buffer(session->m_request),
-                                                            [this, session](const boost::system::error_code &ec,
-                                                                            std::size_t bytes_transferred) {
-                                                                if (ec.value() != 0) {
-                                                                    session->m_ec = ec;
-                                                                    onRequestComplete(session);
-                                                                    return;
-                                                                }
+                                                                   [this, session](const boost::system::error_code &ec,
+                                                                                   std::size_t bytes_transferred) {
+                                                                       if (ec.value() != 0) {
+                                                                           session->m_ec = ec;
+                                                                           onRequestComplete(session);
+                                                                           return;
+                                                                       }
 
-                                                                std::unique_lock<std::mutex>
-                                                                        cancel_lock(session->m_cancel_guard);
+                                                                       std::unique_lock<std::mutex>
+                                                                               cancel_lock(session->m_cancel_guard);
 
-                                                                if (session->m_was_cancelled) {
-                                                                    onRequestComplete(session);
-                                                                    return;
-                                                                }
+                                                                       if (session->m_was_cancelled) {
+                                                                           onRequestComplete(session);
+                                                                           return;
+                                                                       }
 
-                                                                boost::asio::async_read_until(session->m_sock,
-                                                                                       session->m_response_buf,
-                                                                                       '\n',
-                                                                                       [this, session](
-                                                                                               const boost::system::error_code &ec,
-                                                                                               std::size_t bytes_transferred) {
-                                                                                           if (ec.value() != 0) {
-                                                                                               session->m_ec = ec;
-                                                                                           } else {
-                                                                                               std::istream strm(
-                                                                                                       &session->m_response_buf);
-                                                                                               std::getline(strm,
-                                                                                                            session->m_response);
-                                                                                           }
+                                                                       boost::asio::async_read_until(session->m_sock,
+                                                                                                     session->m_response_buf,
+                                                                                                     '\n',
+                                                                                                     [this, session](
+                                                                                                             const boost::system::error_code &ec,
+                                                                                                             std::size_t bytes_transferred) {
+                                                                                                         if (ec.value() !=
+                                                                                                             0) {
+                                                                                                             session->m_ec = ec;
+                                                                                                         } else {
+                                                                                                             std::istream strm(
+                                                                                                                     &session->m_response_buf);
+                                                                                                             std::getline(
+                                                                                                                     strm,
+                                                                                                                     session->m_response);
+                                                                                                         }
 
-                                                                                           onRequestComplete(session);
-                                                                                       });
-                                                            });
+                                                                                                         onRequestComplete(
+                                                                                                                 session);
+                                                                                                     });
+                                                                   });
                                       });
     };
 
@@ -247,14 +251,14 @@ public:
         // Destroy work object. This allows the I/O thread to
         // exits the event loop when there are no more pending
         // asynchronous operations.
-        m_work.reset(NULL);
+        m_work.reset(nullptr);
 
         // Wait for the I/O thread to exit.
         m_thread->join();
     }
 
 private:
-    void onRequestComplete(std::shared_ptr<Session> session) {
+    void onRequestComplete(const std::shared_ptr<Session>& session) {
         // Shutting down the connection. This method may
         // fail in case socket is not connected. We don’t care
         // about the error code if this function fails.
@@ -309,8 +313,6 @@ void handler(unsigned int request_id, const std::string &response, const boost::
                   << ". Error message = " << ec.message()
                   << std::endl;
     }
-
-    return;
 }
 
 int async_client_invoke() {
@@ -319,23 +321,27 @@ int async_client_invoke() {
 
         // Here we emulate the user's behavior.
 
+        for(int i = 0; i <= 100; ++i) {
+            client.emulateLongComputationOp(2, "127.0.0.1", 3333,
+                                            handler, 1);
+        }
         // User initiates a request with id 1.
-        client.emulateLongComputationOp(10, "127.0.0.1", 3333,
-                                        handler, 1);
+//        client.emulateLongComputationOp(2, "127.0.0.1", 3333,
+//                                        handler, 1);
         // Then does nothing for 5 seconds.
-        std::this_thread::sleep_for(std::chrono::seconds(5));
+//        std::this_thread::sleep_for(std::chrono::seconds(5));
         // Then initiates another request with id 2.
-        client.emulateLongComputationOp(11, "127.0.0.1", 3334,
+        client.emulateLongComputationOp(2, "127.0.0.1", 3334,
                                         handler, 2);
         // Then decides to cancel the request with id 1.
-        client.cancelRequest(1);
+//        client.cancelRequest(1);
         // Does nothing for another 6 seconds.
-        std::this_thread::sleep_for(std::chrono::seconds(6));
+//        std::this_thread::sleep_for(std::chrono::seconds(6));
         // Initiates one more request assigning ID3 to it.
-        client.emulateLongComputationOp(12, "127.0.0.1", 3335,
+        client.emulateLongComputationOp(2, "127.0.0.1", 3335,
                                         handler, 3);
         // Does nothing for another 15 seconds.
-        std::this_thread::sleep_for(std::chrono::seconds(15));
+//        std::this_thread::sleep_for(std::chrono::seconds(15));
         // Decides to exit the application.
         client.close();
     }
