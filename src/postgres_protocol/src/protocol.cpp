@@ -25,7 +25,14 @@ void Connection::write_data() {
 }
 
 void Connection::read_response() {
-    sock_.read_some(
 
-            )
 }
+
+void Connection::write(char c) {
+    message_.push_back(c);
+}
+
+void Connection::send_startup_message() {
+
+}
+

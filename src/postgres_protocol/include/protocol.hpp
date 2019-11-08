@@ -20,17 +20,27 @@ struct Send {
 
     // rest of the body
     char body[];
+
 };
 
 
 class Connection {
 public:
     Connection(const std::string &ip_address, unsigned int port_num);
+
     void connect() noexcept(false);
+
     void write_data();
+
     void read_response();
 
+    // write message char to vector
+    void write(char c);
+
+    void send_startup_message();
+
 private:
+    mutable std::vector<char> message_;
     boost::asio::streambuf buf_;
     boost::system::error_code ec_;
     boost::asio::io_context ioc_;
