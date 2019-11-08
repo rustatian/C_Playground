@@ -6,8 +6,12 @@
 #define PLAYGROUND_MESSAGE_HPP
 
 
-class message {
+#include <vector>
 
+class message {
+    friend class Connection;
+private:
+    std::vector<char> message_;
 };
 
 

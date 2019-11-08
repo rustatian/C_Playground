@@ -6,6 +6,9 @@
 #include "../include/protocol.hpp"
 
 int main() {
+    const boost::int_t<32>::exact PROTOCOL_VERSION = (3 << 16);
+
     Connection conn("127.0.0.1", 5432);
     conn.connect();
+    conn.send_startup_message();
 }

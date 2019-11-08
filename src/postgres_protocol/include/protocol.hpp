@@ -7,6 +7,7 @@
 
 #include <boost/asio/ip/tcp.hpp>
 #include <boost/asio/streambuf.hpp>
+#include <boost/integer.hpp>
 
 // For historical reasons,
 // the very first message sent by the client (the startup message)
@@ -40,6 +41,9 @@ public:
     void send_startup_message();
 
 private:
+    const boost::int_t<32>::exact PROTOCOL_VERSION = (3 << 16); //3.0
+
+
     mutable std::vector<char> message_;
     boost::asio::streambuf buf_;
     boost::system::error_code ec_;
