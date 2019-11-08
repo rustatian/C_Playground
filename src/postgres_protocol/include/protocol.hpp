@@ -38,6 +38,8 @@ public:
     // write message char to vector
     void write(char c);
 
+    void write(const std::string &s);
+
     void send_startup_message();
 
 private:

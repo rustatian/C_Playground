@@ -44,16 +44,24 @@ void Connection::write(char c) {
 }
 
 void Connection::send_startup_message() {
-    Connection::write('f');
+    boost::int_t<32>::exact msglen = 32;
+    Connection::write(PROTOCOL_VERSION);
+    Connection::write(msglen);
+    Connection::write("user=postgres");
+    Connection::write("database=posgres");
     Connection::write('\0');
     std::size_t written = sock_.write_some(boost::asio::buffer(message_), ec_);
     if (ec_.value() != 0) {
         std::cout << "ERROR: " << ec_.value() << "MESSAGE: " << ec_.message() << std::endl;
     }
     std::cout << "Written: " << written << std::endl;
-    sock_.shutdown(boost::asio::socket_base::shutdown_send);
+//    sock_.shutdown(boost::asio::socket_base::shutdown_send);
 
 //   read_response();
 
+}
+
+void Connection::write(const std::string &s) {
+    std::copy(s.begin(), s.end(), std::back_inserter(message_));
 }
 
