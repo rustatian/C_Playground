@@ -18,7 +18,7 @@ struct func2 {
     }
 };
 
-void f() {
+void f11() {
     int some_local_state = 0;
 
     func2 my_func(some_local_state);
