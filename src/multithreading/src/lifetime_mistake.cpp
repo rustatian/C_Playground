@@ -22,4 +22,4 @@ void oops() {
 
     std::thread my_thread(my_func);
     my_thread.detach();
-} // <-- here my_thread will call destructor (std::terminate)
+} // <-- here the reference to local variable would be destroyed
