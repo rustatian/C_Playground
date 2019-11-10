@@ -10,8 +10,9 @@ void hello() {
     std::cout << "Hello concurrent world!";
 }
 
-int main(int, char**) {
-    std::terminate();
-    std::thread t(hello);
-    t.join();
+int main(int, char **) {
+    //std::terminate();
+//    std::thread t(hello);
+//    t.join();
+    oops();
 }
