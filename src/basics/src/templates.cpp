@@ -51,6 +51,10 @@ T createFrom(const T &other) {
     return T(other);
 }
 
+class A {
+
+};
+
 int main(int, char **) {
     max(3, 4);
     max(3.4, 3.5);
@@ -66,5 +70,8 @@ int main(int, char **) {
 
     getMaxAmount(ukacc2, ukacc1);
 
+    A a;
 
+    A& a_ref1 = a;
+    A&& a_ref2 = A();
 }
