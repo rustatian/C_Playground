@@ -78,16 +78,18 @@ void process_git_request(const std::filesystem::directory_entry &entry, const st
 }
 
 void run_git_command(const std::string &command, const std::string &root) {
-    std::vector<std::thread> threads;
+//    std::vector<std::thread> threads;
     for (const std::filesystem::directory_entry &entry: std::filesystem::directory_iterator(root)) {
         if (entry.is_directory()) {
-            threads.emplace_back(process_git_request, entry, command);
+            std::thread t(process_git_request, entry, command);
+            t.join();
+//            threads.emplace_back(process_git_request, entry, command);
         }
     }
 
-    for (auto &entry: threads) {
-        entry.join();
-    }
+//    for (auto &entry: threads) {
+//        entry.join();
+//    }
 }
 
 int main(int argc, char *argv[]) {
