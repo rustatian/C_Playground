@@ -11,22 +11,25 @@
 #include <cstring>
 #include <thread>
 #include <future>
+#include <vector>
 
 // RAII idiom
 class thread_guard {
     std::thread &t;
 public:
-    explicit thread_guard(std::thread& t_) : t(t_){}
-    ~thread_guard(){
-        if(t.joinable()) {
+    explicit thread_guard(std::thread &t_) : t(t_) {}
+
+    ~thread_guard() {
+        if (t.joinable()) {
             t.join();
         }
     }
 
     // assignment operator is marked as deleted
-    thread_guard(thread_guard const&) = delete;
+    thread_guard(thread_guard const &) = delete;
+
     // copy operator also deleted
-    thread_guard &operator=(thread_guard const&) = delete; // operator = that returns a reference
+    thread_guard &operator=(thread_guard const &) = delete; // operator = that returns a reference
 };
 
 void process_git_request(const std::filesystem::directory_entry &entry, const std::string &command) {
@@ -75,11 +78,15 @@ void process_git_request(const std::filesystem::directory_entry &entry, const st
 }
 
 void run_git_command(const std::string &command, const std::string &root) {
+    std::vector<std::thread> threads;
     for (const std::filesystem::directory_entry &entry: std::filesystem::directory_iterator(root)) {
         if (entry.is_directory()) {
-            std::thread th(process_git_request, entry, command);
-            thread_guard g(th);
+            threads.emplace_back(process_git_request, entry, command);
         }
+    }
+
+    for (auto &entry: threads) {
+        entry.join();
     }
 }
 

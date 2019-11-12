@@ -37,7 +37,6 @@ public:
     scoped_thread &operator=(scoped_thread const &) = delete;
 };
 
-
 struct func3 {
     int &i;
 
@@ -49,6 +48,16 @@ struct func3 {
         }
     }
 };
+
+
+void ff() {
+    int some_local_state;
+    scoped_thread  t {std::thread(func3(some_local_state))};
+    //do_something_in_current_thread();
+}
+
+
+
 
 void f() {
     int some_local_state = 0;

@@ -1,0 +1,10 @@
+//
+// Created by Valery Piashchynski on 11/12/19.
+//
+
+#ifndef PLAYGROUND_JOINING_THREADS_HPP
+#define PLAYGROUND_JOINING_THREADS_HPP
+
+
+
+#endif //PLAYGROUND_JOINING_THREADS_HPP
