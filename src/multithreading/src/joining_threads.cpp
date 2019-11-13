@@ -21,8 +21,30 @@ public:
 
     joining_threads &operator=(joining_threads &&other) noexcept {
         if (joinable()) {
-
+            join();
         }
+        t = std::move(other.t);
+        return *this;
+    }
+
+    joining_threads&operator=(std::thread other) noexcept(true) {
+        if(joinable()) {
+            join();
+        }
+        t = std::move(other);
+        return *this;
+    }
+    ~joining_threads() noexcept {
+        if(joinable())
+            join();
+    }
+
+    void swap(joining_threads &other) noexcept {
+        t.swap(other.t);
+    }
+
+    std::thread::id get_id() const noexcept {
+        return t.get_id();
     }
 
     bool joinable() const noexcept {
@@ -41,7 +63,7 @@ public:
         return t;
     }
 
-    [[nodiscard]] const std::thread &as_thread() const noexcept {
+    [[nodiscard]] const std::thread& as_thread() const noexcept {
         return t;
     }
 };
