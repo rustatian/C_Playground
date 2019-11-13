@@ -43,11 +43,11 @@ public:
         t.swap(other.t);
     }
 
-    std::thread::id get_id() const noexcept {
+    [[nodiscard]] std::thread::id get_id() const noexcept {
         return t.get_id();
     }
 
-    bool joinable() const noexcept {
+    [[nodiscard]] bool joinable() const noexcept {
         return t.joinable();
     }
 
