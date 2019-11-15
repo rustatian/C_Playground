@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <thread>
+#include <numeric>
 #include "../include/hello_multithreading_world.hpp"
 
 void hello() {
@@ -17,21 +18,25 @@ int main(int, char **) {
 //    t.join();
 //    oops();
 
-    void some_function();
-    void some_other_function();
+//    void some_function();
+//    void some_other_function();
+//
+//    std::thread t1(some_function);
+//    std::thread t2=std::move(t1);
+//    t1=std::thread(some_other_function);
+//    std::thread t3;
+//    t3=std::move(t2);
+//    t1=std::move(t3);
 
-    std::thread t1(some_function);
-    std::thread t2=std::move(t1);
-    t1=std::thread(some_other_function);
-    std::thread t3;
-    t3=std::move(t2);
-    t1=std::move(t3);
+    std::cout << std::thread::hardware_concurrency();
+    std::accumulate(1,)
+    return 0;
 }
 
-std::thread g() {
-    void some_other_function2();
-    return std::thread(some_other_function2);
-}
+//std::thread g() {
+//    void some_other_function2();
+//    return std::thread(some_other_function2);
+//}
 
 
 class X {

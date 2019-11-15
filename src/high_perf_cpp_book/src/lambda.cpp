@@ -6,7 +6,7 @@
 #include <vector>
 #include <list>
 #include <iostream>
-#include <assert.h>
+#include <cassert>
 
 auto vals = std::vector<int>{1, 3, 2, 5, 4};
 
