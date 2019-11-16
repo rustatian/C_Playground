@@ -25,11 +25,17 @@ T parallel_accumulate(Iterator first, Iterator last, T init) {
     unsigned long const num_threads = std::min(hardware_threads != 0 ? hardware_threads : 2, max_threads);
     unsigned long const block_size = length / num_threads;
 
+    // intermediate results
     std::vector<T> results(num_threads);
+    // we have to launch one thread fewer, because we already have one launched
     std::vector<std::thread> threads(num_threads - 1);
     Iterator block_start = first;
 
     for (unsigned long i = 0; i < (num_threads - 1); ++i) {
+        // save the start block
+        // move block_end by block size
+        // attach block to the thread
+        // the start of the next block is the end of this one
         Iterator block_end = block_start;
         std::advance(block_end, block_size);
         threads[i] = std::thread(accumulate_block<Iterator, T>(),
