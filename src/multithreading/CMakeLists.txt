@@ -11,6 +11,6 @@ add_executable(hw
         include/waiting_for_finish.hpp
         src/RAII.cpp
         src/detached_threads.cpp
-        src/joining_threads.cpp include/joining_threads.hpp)
+        src/joining_threads.cpp include/joining_threads.hpp src/parallel_accumulate.cpp)
 
 target_link_libraries(hw ${CMAKE_THREAD_LIBS_INIT})

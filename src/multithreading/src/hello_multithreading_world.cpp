@@ -28,8 +28,11 @@ int main(int, char **) {
 //    t3=std::move(t2);
 //    t1=std::move(t3);
 
+    int i = 10;
+
     std::cout << std::thread::hardware_concurrency();
-    std::accumulate(1,)
+//    std::accumulate(1,);
+    __builtin_prefetch(&i);
     return 0;
 }
 
