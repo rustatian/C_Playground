@@ -3,7 +3,7 @@
 //
 
 #include <thread>
-#include "../include/joining_threads.hpp"
+#include "../../include/joining_threads.hpp"
 
 class joining_threads {
     std::thread t;

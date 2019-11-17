@@ -2,7 +2,7 @@
 // Created by valery on 10/11/2019.
 //
 
-#include "../include/waiting_for_finish.hpp"
+#include "../../include/waiting_for_finish.hpp"
 
 #include <thread>
 
