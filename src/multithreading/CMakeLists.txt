@@ -14,7 +14,7 @@ add_executable(hw
         src/chapter_1_2/joining_threads.cpp include/joining_threads.hpp src/chapter_1_2/parallel_accumulate.cpp)
 
 add_executable(hw3
-        src/chapter_3_sharing_data/protecting_list.cpp)
+        src/chapter_3_sharing_data/protecting_list.cpp src/chapter_3_sharing_data/accidentally_passing_out_a_reference.cpp)
 
 target_link_libraries(hw ${CMAKE_THREAD_LIBS_INIT})
 target_link_libraries(hw3 ${CMAKE_THREAD_LIBS_INIT})

@@ -4,6 +4,7 @@
 #include <list>
 #include <mutex>
 #include <algorithm>
+#include <fstream>
 
 std::list<int> some_list;
 std::mutex some_mutex;
@@ -21,5 +22,7 @@ bool list_contains(int value_to_find) {
 
 
 int main(int, char **) {
+    std::ofstream file("fomr");
+    file.
 
 }
