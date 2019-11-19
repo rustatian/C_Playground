@@ -51,7 +51,6 @@ private:
         boost::asio::read_until(sock_, buf, "\n");
 
         std::istream input(&buf);
-
         std::string response;
         std::getline(input, response);
         return response;
