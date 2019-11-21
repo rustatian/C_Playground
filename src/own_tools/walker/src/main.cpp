@@ -25,10 +25,10 @@ int main(int argc, char *argv[]) {
 
     for (const std::filesystem::directory_entry &entry: std::filesystem::directory_iterator(argv[1])) {
         if (entry.is_directory()) {
-            w.add_path(entry.path().string());
+            w.add_repo(entry.path().string());
         }
     }
 
-    w.pull_repo();
+    w.pull_repos();
     w.push_origin();
 }

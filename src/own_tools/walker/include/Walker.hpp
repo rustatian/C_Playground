@@ -16,9 +16,9 @@ public:
 
     Walker &operator()() = delete;
 
-    void add_path(const std::string& path);
+    void add_repo(const std::string& path);
 
-    void pull_repo() noexcept(false);
+    void pull_repos() noexcept(false);
 
     void push_origin() noexcept(false);
 

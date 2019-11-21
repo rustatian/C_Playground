@@ -33,7 +33,7 @@ public:
 };
 
 
-void Walker::pull_repo() noexcept(false) {
+void Walker::pull_repos() noexcept(false) {
     for (auto &path : paths_){
         Walker::executor(path, Walker::PULL_COMMAND_);
     }
@@ -45,7 +45,7 @@ void Walker::push_origin() noexcept(false) {
     }
 }
 
-void Walker::add_path(const std::string& path) {
+void Walker::add_repo(const std::string& path) {
     paths_.push_back(path);
 }
 
