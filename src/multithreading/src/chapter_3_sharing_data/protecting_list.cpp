@@ -20,9 +20,23 @@ bool list_contains(int value_to_find) {
     return std::find(some_list.begin(), some_list.end(), value_to_find) != some_list.end();
 }
 
+#include <stdio.h>
 
-int main(int, char **) {
-    std::ofstream file("fomr");
-    file.
+void update(int *a,int *b) {
+    int tempA = (*a);
+    int tempB = (*b);
 
+    (*a) = tempA + tempB;
+    (*b) = tempA - tempB;
+}
+
+int main() {
+    int a, b;
+    int *pa = &a, *pb = &b;
+
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
+
+    return 0;
 }
