@@ -32,68 +32,7 @@ public:
     thread_guard &operator=(thread_guard const &) = delete; // operator = that returns a reference
 };
 
-//void process_git_request(const std::filesystem::directory_entry &entry, const std::string &command) {
-//    std::cout << "entering dir: " << entry.path().string() << std::endl;
-//
-//    char cstr[entry.path().string().size() + 1];
-//    // copy the string
-//    strcpy(cstr, entry.path().string().c_str());
-//
-//    try {
-//        chdir(cstr);
-//    } catch (...) {
-//        throw;
-//    }
-//
-//
-//    // buffer
-//    char buffer[256];
-//    // result string
-//    std::string result;
-//
-//    // open a pipe
-//    FILE *pipe = popen(command.c_str(), "r");
-//    if (!pipe) {
-//        throw std::runtime_error("popen failed");
-//    }
-//
-//    // get data from process and put in the buffer
-//    try {
-//        while (fgets(buffer, sizeof buffer, pipe) != nullptr) {
-//            result += buffer;
-//        }
-//    } catch (...) {
-//        pclose(pipe);
-//        throw;
-//    }
-//
-//    // print the result
-//    std::cout << "dir: " << entry.path().string() << " result: " << result << std::endl;
-//
-//    try {
-//        pclose(pipe);
-//    } catch (...) {
-//        throw;
-//    }
-//}
-//
-//void run_git_command(const std::string &command, const std::string &root) {
-////    std::vector<std::thread> threads;
-//    for (const std::filesystem::directory_entry &entry: std::filesystem::directory_iterator(root)) {
-//        if (entry.is_directory()) {
-//            std::thread t(process_git_request, entry, command);
-//            t.join();
-////            threads.emplace_back(process_git_request, entry, command);
-//        }
-//    }
-//
-////    for (auto &entry: threads) {
-////        entry.join();
-////    }
-//}
-
 int main(int argc, char *argv[]) {
-
     // usage:
     // firs arg is dir with repos
     // second - pull or push
@@ -118,134 +57,68 @@ int main(int argc, char *argv[]) {
 
     w.pull_repo();
     w.push_origin();
-
-
-
-
-
-
-
-
-
-
-
-//    if (argc == 4) {
-//        std::cout << "EXECUTING: " << argv[2] << " AND: " << argv[3] << std::endl;
-//        run_git_command("git pull", argv[1]);
-//        run_git_command("git add . && git commit -m \"$(curl -s http://whatthecommit.com/index.txt)\" && git push",
-//                        argv[1]);
-//        // only pull or push
-//    } else if (argc == 3) {
-//        run_git_command(argv[2], argv[1]);
-//    }
-//
-//
-//    std::cout << "start searching dirs in: " << argv[1] << std::endl;
-//    char *root = argv[1];
-//
-//
-//    return 0;
 }
 
 
-int Walker::pull_repo() noexcept(false) {
-    for (auto &path : paths_) {
-        std::cout << "entering dir: " << path << std::endl;
-
-        char cstr[path.size() + 1];
-        // copy the string
-        strcpy(cstr, std::string(path).c_str());
-
-        try {
-            chdir(cstr);
-        } catch (...) {
-            throw;
-        }
-
-
-        // buffer
-        char buffer[256];
-        // result string
-        std::string result;
-
-        // open a pipe
-        FILE *pipe = popen(PULL_COMMAND_.c_str(), "r");
-        if (!pipe) {
-            throw std::runtime_error("popen failed");
-        }
-
-        // get data from process and put in the buffer
-        try {
-            while (fgets(buffer, sizeof buffer, pipe) != nullptr) {
-                result += buffer;
-            }
-        } catch (...) {
-            pclose(pipe);
-            throw;
-        }
-
-        // print the result
-        std::cout << "dir: " << path << " result: " << result << std::endl;
-
-        try {
-            pclose(pipe);
-        } catch (...) {
-            throw;
-        }
+void Walker::pull_repo() noexcept(false) {
+    for (auto &path : paths_){
+        Walker::executor(path, Walker::PULL_COMMAND_);
     }
-    return 0;
 }
 
-int Walker::push_origin() noexcept(false) {
+void Walker::push_origin() noexcept(false) {
     for (auto &path : paths_) {
-        std::cout << "entering dir: " << path << std::endl;
-
-        char cstr[path.size() + 1];
-        // copy the string
-        strcpy(cstr, std::string(path).c_str());
-
-        try {
-            chdir(cstr);
-        } catch (...) {
-            throw;
-        }
-
-
-        // buffer
-        char buffer[256];
-        // result string
-        std::string result;
-
-        // open a pipe
-        // git add . && git commit -m "$(curl -s http://whatthecommit.com/index.txt)" && git push
-        // assume that path, pull and push provided
-        FILE *pipe = popen(PUSH_COMMAND_.c_str(), "r");
-        if (!pipe) {
-            throw std::runtime_error("popen failed");
-        }
-
-        // get data from process and put in the buffer
-        try {
-            while (fgets(buffer, sizeof buffer, pipe) != nullptr) {
-                result += buffer;
-            }
-        } catch (...) {
-            pclose(pipe);
-            throw;
-        }
-
-        // print the result
-        std::cout << "dir: " << path << " result: " << result << std::endl;
-
-        try {
-            pclose(pipe);
-        } catch (...) {
-            throw;
-        }
+        Walker::executor(path, Walker::PUSH_COMMAND_);
     }
-    return 0;
 }
 
 void Walker::add_path(const std::string& path) {
     paths_.push_back(path);
+}
+
+void Walker::executor(const std::string &path, const std::string &command) {
+    std::cout << "entering dir: " << path << std::endl;
+
+    char cstr[path.size() + 1];
+    // copy the string
+    strcpy(cstr, std::string(path).c_str());
+
+    try {
+        chdir(cstr);
+    } catch (...) {
+        throw;
+    }
+
+
+    // buffer
+    char buffer[256];
+    // result string
+    std::string result;
+
+    // open a pipe
+    // git add . && git commit -m "$(curl -s http://whatthecommit.com/index.txt)" && git push
+    // assume that path, pull and push provided
+    FILE *pipe = popen(command.c_str(), "r");
+    if (!pipe) {
+        throw std::runtime_error("popen failed");
+    }
+
+    // get data from process and put in the buffer
+    try {
+        while (fgets(buffer, sizeof buffer, pipe) != nullptr) {
+            result += buffer;
+        }
+    } catch (...) {
+        pclose(pipe);
+        throw;
+    }
+
+    // print the result
+    std::cout << "dir: " << path << " result: " << result << std::endl;
+
+    try {
+        pclose(pipe);
+    } catch (...) {
+        throw;
+    }
 }
