@@ -62,36 +62,24 @@ void Walker::executor(const std::string &path, const std::string &command) {
         throw;
     }
 
-
-    // buffer
-    char buffer[256];
+    std::array<char, 256> buffer{};
     // result string
     std::string result;
 
     // open a pipe
     // git add . && git commit -m "$(curl -s http://whatthecommit.com/index.txt)" && git push
     // assume that path, pull and push provided
-    FILE *pipe = popen(command.c_str(), "r");
+
+    std::unique_ptr<FILE, decltype(&pclose)> pipe(popen(command.c_str(), "r"), pclose);
     if (!pipe) {
-        throw std::runtime_error("popen failed");
+        throw std::runtime_error("popen() failed");
     }
 
-    // get data from process and put in the buffer
-    try {
-        while (fgets(buffer, sizeof buffer, pipe) != nullptr) {
-            result += buffer;
-        }
-    } catch (...) {
-        pclose(pipe);
-        throw;
+    while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
+        result += buffer.data();
     }
 
     // print the result
     std::cout << "dir: " << path << " result: " << result << std::endl;
 
-    try {
-        pclose(pipe);
-    } catch (...) {
-        throw;
-    }
 }
