@@ -67,8 +67,7 @@ void Walker::executor(const std::string &path, const std::string &command) {
     std::string result;
 
     // open a pipe
-    // git add . && git commit -m "$(curl -s http://whatthecommit.com/index.txt)" && git push
-    // assume that path, pull and push provided
+    // deleter would be a pclose
     std::unique_ptr<FILE, decltype(&pclose)> pipe(popen(command.c_str(), "r"), pclose);
     if (!pipe) {
         throw std::runtime_error("popen() failed");
