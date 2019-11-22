@@ -8,7 +8,7 @@
 
 class GreeterClient {
 public:
-    GreeterClient(std::shared_ptr<grpc::Channel> channel) : stub_(cpp_grpc::Greeter::NewStub(channel)) {}
+    explicit GreeterClient(const std::shared_ptr<grpc::Channel>& channel) : stub_(cpp_grpc::Greeter::NewStub(channel)) {}
 
     std::string SayHello(const std::string &user) {
         cpp_grpc::HelloRequest request;
