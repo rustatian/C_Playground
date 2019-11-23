@@ -12,15 +12,23 @@ find_package(Protobuf REQUIRED)
 #message(STATUS ${_GRPC_GRPCPP_UNSECURE})
 #message(STATUS "Using protobuf ${protobuf_VERSION}")
 
-add_executable(grpc_client src/grpc.cpp include/grpc.hpp
+add_executable(grpc_client src/grpc_client.cpp include/grpc_client.hpp
         proto/greeter.grpc.pb.cc
         proto/greeter.grpc.pb.h
         proto/greeter.pb.cc
         proto/greeter.pb.h)
+
+add_executable(grpc_server src/grpc_server.cpp
+        proto/greeter.grpc.pb.cc
+        proto/greeter.grpc.pb.h
+        proto/greeter.pb.cc
+        proto/greeter.pb.h)
+
 target_link_libraries(grpc_client
         grpc++_unsecure
+        ${Protobuf_LIBRARIES})
 
-        ${Protobuf_LIBRARIES}
-        )
-
+target_link_libraries(grpc_server
+        grpc++_unsecure
+        ${Protobuf_LIBRARIES})
 

@@ -2,7 +2,7 @@
 // Created by valery on 11/21/19.
 //
 
-#include "../include/grpc.hpp"
+#include "../include/grpc_client.hpp"
 #include <grpcpp/grpcpp.h>
 #include "../proto/greeter.grpc.pb.h"
 
