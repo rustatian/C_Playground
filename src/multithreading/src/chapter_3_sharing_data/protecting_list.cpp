@@ -20,7 +20,7 @@ bool list_contains(int value_to_find) {
     return std::find(some_list.begin(), some_list.end(), value_to_find) != some_list.end();
 }
 
-#include <stdio.h>
+#include <cstdio>
 
 void update(int *a,int *b) {
     int tempA = (*a);
