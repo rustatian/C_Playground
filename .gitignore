@@ -54,3 +54,5 @@ dkms.conf
 */cmake-build-debug/*
 cmake-build-debug
 cmake-build-minsizerel
+
+src/php_ffi/imagesst
