@@ -1,0 +1,1 @@
+ccache /usr/bin/cc -O3 -DNDEBUG  -lrt -lpthread CMakeFiles/sq_lite.dir/src/main.c.o  -o sq_lite 

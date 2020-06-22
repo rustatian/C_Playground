@@ -1,0 +1,1 @@
+ccache /usr/bin/c++  -O3 -DNDEBUG  -lrt -lpthread CMakeFiles/grpc_server.dir/src/grpc_server.cpp.o CMakeFiles/grpc_server.dir/proto/greeter.grpc.pb.cc.o CMakeFiles/grpc_server.dir/proto/greeter.pb.cc.o  -o grpc_server  -lgrpc++_unsecure /usr/lib/libprotobuf.so -lpthread 

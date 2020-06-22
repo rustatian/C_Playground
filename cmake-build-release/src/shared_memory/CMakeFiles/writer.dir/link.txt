@@ -1,0 +1,1 @@
+ccache /usr/bin/cc -O3 -DNDEBUG  -lrt -lpthread CMakeFiles/writer.dir/src/writer.c.o  -o writer 

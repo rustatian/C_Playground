@@ -1,0 +1,297 @@
+[
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/geeksforgeeks",
+  "command": "/usr/bin/cc   -O3 -DNDEBUG   -o CMakeFiles/gfg.dir/course/main.c.o   -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/geeksforgeeks/course/main.c",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/geeksforgeeks/course/main.c"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/geeksforgeeks",
+  "command": "/usr/bin/cc   -O3 -DNDEBUG   -o CMakeFiles/gfg.dir/course/binary_search.c.o   -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/geeksforgeeks/course/binary_search.c",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/geeksforgeeks/course/binary_search.c"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/linux_kernel/linux_sources",
+  "command": "/usr/bin/cc   -O3 -DNDEBUG   -o CMakeFiles/script.h.dir/script.c.o   -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/linux_sources/script.c",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/linux_sources/script.c"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/linux_kernel/script_linux",
+  "command": "/usr/bin/cc   -std=c11 -O3 -DNDEBUG   -o CMakeFiles/ptyFork.h.dir/pty_master_open.c.o   -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/script_linux/pty_master_open.c",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/script_linux/pty_master_open.c"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/linux_kernel/script_linux",
+  "command": "/usr/bin/cc   -std=c11 -O3 -DNDEBUG   -o CMakeFiles/ptyFork.h.dir/ptyFork.c.o   -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/script_linux/ptyFork.c",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/script_linux/ptyFork.c"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/linux_kernel/script_linux",
+  "command": "/usr/bin/cc   -std=c11 -O3 -DNDEBUG   -o CMakeFiles/ptyFork.h.dir/errors.c.o   -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/script_linux/errors.c",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/script_linux/errors.c"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/linux_kernel/script_linux",
+  "command": "/usr/bin/cc   -std=c11 -O3 -DNDEBUG   -o CMakeFiles/ptyFork.h.dir/tty_raw.c.o   -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/script_linux/tty_raw.c",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/script_linux/tty_raw.c"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/linux_kernel/script_linux",
+  "command": "/usr/bin/cc   -std=c11 -O3 -DNDEBUG   -o CMakeFiles/ptyFork.h.dir/recorder.c.o   -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/script_linux/recorder.c",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/script_linux/recorder.c"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/linux_kernel/script_linux",
+  "command": "/usr/bin/cc   -std=c11 -O3 -DNDEBUG   -o CMakeFiles/ptyFork.h.dir/replay.c.o   -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/script_linux/replay.c",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/script_linux/replay.c"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/databases/sq_lite",
+  "command": "/usr/bin/cc   -O3 -DNDEBUG   -o CMakeFiles/sq_lite.dir/src/main.c.o   -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/databases/sq_lite/src/main.c",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/databases/sq_lite/src/main.c"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/linux_kernel/tty/tty_record",
+  "command": "/usr/bin/cc   -O3 -DNDEBUG   -std=gnu11 -o CMakeFiles/ttyrec.h.dir/ttyrec.c.o   -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/tty/tty_record/ttyrec.c",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/tty/tty_record/ttyrec.c"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/linux_kernel/tty/tty_record",
+  "command": "/usr/bin/cc   -O3 -DNDEBUG   -std=gnu11 -o CMakeFiles/ttyrec.h.dir/io.c.o   -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/tty/tty_record/io.c",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/tty/tty_record/io.c"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/linux_kernel/tty/tty_replay",
+  "command": "/usr/bin/cc   -O3 -DNDEBUG   -o CMakeFiles/ttyplay.h.dir/ttyplay.c.o   -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/tty/tty_replay/ttyplay.c",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/tty/tty_replay/ttyplay.c"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/linux_kernel/tty/tty_replay",
+  "command": "/usr/bin/cc   -O3 -DNDEBUG   -o CMakeFiles/ttyplay.h.dir/io.c.o   -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/tty/tty_replay/io.c",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/tty/tty_replay/io.c"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/high_perf_cpp_book",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/lambda.dir/src/lambda.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/high_perf_cpp_book/src/lambda.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/high_perf_cpp_book/src/lambda.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/high_perf_cpp_book",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/raii.dir/src/recource_acquisition.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/high_perf_cpp_book/src/recource_acquisition.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/high_perf_cpp_book/src/recource_acquisition.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/high_perf_cpp_book",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/prvs.dir/src/preserving_the_valid_state.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/high_perf_cpp_book/src/preserving_the_valid_state.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/high_perf_cpp_book/src/preserving_the_valid_state.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/high_perf_cpp_book",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/hperf.dir/src/main.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/high_perf_cpp_book/src/main.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/high_perf_cpp_book/src/main.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/own_tools/walker",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/walker.dir/src/main.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/own_tools/walker/src/main.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/own_tools/walker/src/main.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/own_tools/walker",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/walker.dir/src/Walker.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/own_tools/walker/src/Walker.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/own_tools/walker/src/Walker.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/boost_learn/boost_part_1",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/accept_connection.dir/src/accept_connection.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_part_1/src/accept_connection.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_part_1/src/accept_connection.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/boost_learn/boost_part_1",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/binding_socket_to_ep.dir/src/binding_socket_to_ep.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_part_1/src/binding_socket_to_ep.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_part_1/src/binding_socket_to_ep.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/boost_learn/boost_part_1",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/passive_socket.dir/src/passive_socket.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_part_1/src/passive_socket.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_part_1/src/passive_socket.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/boost_learn/boost_part_1",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/active_socket.dir/src/active_socket.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_part_1/src/active_socket.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_part_1/src/active_socket.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/boost_learn/boost_part_1",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/boost_server.dir/src/server.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_part_1/src/server.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_part_1/src/server.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/boost_learn/boost_part_1",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/boost_client.dir/src/client.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_part_1/src/client.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_part_1/src/client.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/boost_learn/boost_asio_part_2",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/part2_server.dir/src/server.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_asio_part_2/src/server.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_asio_part_2/src/server.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/boost_learn/boost_asio_part_2",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/part2_client.dir/src/client.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_asio_part_2/src/client.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_asio_part_2/src/client.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/boost_learn/boost_asio_part_2",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/boost_asio_part2.dir/src/main.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_asio_part_2/src/main.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_asio_part_2/src/main.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/boost_learn/boost_asio_part_2",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/boost_asio_part2.dir/src/server.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_asio_part_2/src/server.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_asio_part_2/src/server.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/linux_kernel/kernel_experiments",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/ke.dir/src/kernel_experiments.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/kernel_experiments/src/kernel_experiments.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/kernel_experiments/src/kernel_experiments.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/boost_learn/boost_asio_part_3",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/part3_server.dir/src/server.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_asio_part_3/src/server.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_asio_part_3/src/server.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/boost_learn/boost_asio_part_3",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/part3_client.dir/src/client.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_asio_part_3/src/client.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_asio_part_3/src/client.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/experiments/experiments_with_go",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/go_exp1.dir/src/main.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/experiments/experiments_with_go/src/main.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/experiments/experiments_with_go/src/main.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/databases/postgres_protocol",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/postgres_protocol.dir/src/main.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/databases/postgres_protocol/src/main.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/databases/postgres_protocol/src/main.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/databases/postgres_protocol",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/postgres_protocol.dir/src/protocol.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/databases/postgres_protocol/src/protocol.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/databases/postgres_protocol/src/protocol.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/databases/postgres_protocol",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/postgres_protocol.dir/src/message.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/databases/postgres_protocol/src/message.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/databases/postgres_protocol/src/message.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/basics",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/basics-templates.dir/src/templates.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/basics/src/templates.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/basics/src/templates.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/hw3.dir/src/chapter_3_sharing_data/protecting_list.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_3_sharing_data/protecting_list.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_3_sharing_data/protecting_list.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/hw3.dir/src/chapter_3_sharing_data/accidentally_passing_out_a_reference.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_3_sharing_data/accidentally_passing_out_a_reference.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_3_sharing_data/accidentally_passing_out_a_reference.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/hw.dir/src/chapter_1_2/lifetime_mistake.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/lifetime_mistake.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/lifetime_mistake.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/hw.dir/src/chapter_1_2/background_task.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/background_task.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/background_task.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/hw.dir/src/chapter_1_2/hello_multithreading_world.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/hello_multithreading_world.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/hello_multithreading_world.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/hw.dir/src/chapter_1_2/waiting_for_finish.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/waiting_for_finish.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/waiting_for_finish.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/hw.dir/src/chapter_1_2/RAII.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/RAII.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/RAII.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/hw.dir/src/chapter_1_2/detached_threads.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/detached_threads.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/detached_threads.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/hw.dir/src/chapter_1_2/joining_threads.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/joining_threads.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/joining_threads.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/hw.dir/src/chapter_1_2/parallel_accumulate.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/parallel_accumulate.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/parallel_accumulate.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/infrastructure/GRPC",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/grpc_server.dir/src/grpc_server.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/infrastructure/GRPC/src/grpc_server.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/infrastructure/GRPC/src/grpc_server.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/infrastructure/GRPC",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/grpc_server.dir/proto/greeter.grpc.pb.cc.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/infrastructure/GRPC/proto/greeter.grpc.pb.cc",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/infrastructure/GRPC/proto/greeter.grpc.pb.cc"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/infrastructure/GRPC",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/grpc_server.dir/proto/greeter.pb.cc.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/infrastructure/GRPC/proto/greeter.pb.cc",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/infrastructure/GRPC/proto/greeter.pb.cc"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/infrastructure/GRPC",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/grpc_client.dir/src/grpc_client.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/infrastructure/GRPC/src/grpc_client.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/infrastructure/GRPC/src/grpc_client.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/infrastructure/GRPC",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/grpc_client.dir/proto/greeter.grpc.pb.cc.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/infrastructure/GRPC/proto/greeter.grpc.pb.cc",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/infrastructure/GRPC/proto/greeter.grpc.pb.cc"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/infrastructure/GRPC",
+  "command": "/usr/bin/c++    -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/grpc_client.dir/proto/greeter.pb.cc.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/infrastructure/GRPC/proto/greeter.pb.cc",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/infrastructure/GRPC/proto/greeter.pb.cc"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/programming_parallel_computers",
+  "command": "/usr/bin/c++    -fopenmp -fopenmp -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/ppt.dir/src/main.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/programming_parallel_computers/src/main.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/programming_parallel_computers/src/main.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/php_ffi",
+  "command": "/usr/bin/c++   -I/usr/include/ImageMagick-7   -std=c++2a -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -lMagick++-7.Q16HDRI -lMagickWand-7.Q16HDRI -lMagickCore-7.Q16HDRI -O3 -DNDEBUG   -std=gnu++2a -o CMakeFiles/php_ffi.dir/src/main.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/php_ffi/src/main.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/php_ffi/src/main.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/php_ffi",
+  "command": "/usr/bin/c++  -Dphp_ffi_so_EXPORTS -I/usr/include/ImageMagick-7   -std=c++2a -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -lMagick++-7.Q16HDRI -lMagickWand-7.Q16HDRI -lMagickCore-7.Q16HDRI -O3 -DNDEBUG -fPIC   -std=gnu++2a -o CMakeFiles/php_ffi.so.dir/src/main.cpp.o -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/php_ffi/src/main.cpp",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/php_ffi/src/main.cpp"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/shared_memory",
+  "command": "/usr/bin/cc   -O3 -DNDEBUG   -o CMakeFiles/reader.dir/src/reader.c.o   -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/shared_memory/src/reader.c",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/shared_memory/src/reader.c"
+},
+{
+  "directory": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/shared_memory",
+  "command": "/usr/bin/cc   -O3 -DNDEBUG   -o CMakeFiles/writer.dir/src/writer.c.o   -c /home/valery/Projects/opensource/github/playgrounds/C_Playground/src/shared_memory/src/writer.c",
+  "file": "/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/shared_memory/src/writer.c"
+}
+]

@@ -12,3 +12,7 @@ int main() {
     conn.connect();
     conn.send_startup_message();
 }
+
+typedef struct mi_page_s {
+    uint8_t segment_idx:1,
+} mi_page_t ;

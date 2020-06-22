@@ -1,0 +1,1 @@
+ccache /usr/bin/c++  -O3 -DNDEBUG  -lrt -lpthread CMakeFiles/boost_asio_part2.dir/src/main.cpp.o CMakeFiles/boost_asio_part2.dir/src/server.cpp.o  -o boost_asio_part2  -lpthread 

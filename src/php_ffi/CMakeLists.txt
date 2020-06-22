@@ -15,11 +15,10 @@ string(STRIP "${MAGICK_CXX_FLAGS}" MAGICK_CXX_FLAGS)
 string(STRIP "${MAGICK_LD_FLAGS}" MAGICK_LD_FLAGS)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++2a ${MAGICK_CXX_FLAGS} ${MAGICK_LD_FLAGS}")
-#set(SOURCE_FILES src/main.cpp)
+set(GCC_COVERAGE_COMPILE_FLAGS "-O3")
 
+
+add_library(php_ffi.so SHARED src/main.cpp)
 add_executable(php_ffi src/main.cpp include/main.hpp)
-
-add_definitions( -DMAGICKCORE_QUANTUM_DEPTH=16 )
-add_definitions( -DMAGICKCORE_HDRI_ENABLE=0 )
 include_directories(${ImageMagick_INCLUDE_DIRS})
 target_link_libraries(php_ffi ${ImageMagick_LIBRARIES})

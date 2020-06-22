@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="multithreading"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\src\geeksforgeeks\;CMake Files\src\basics\;CMake Files\src\boost_learn\;CMake Files\src\boost_learn\boost_asio_part_3\;CMake Files\src\boost_learn\boost_part_1\;CMake Files\src\boost_learn\boost_asio_part_2\;CMake Files\src\experiments\;CMake Files\src\experiments\experiments_with_go\;CMake Files\src\infrastructure\;CMake Files\src\infrastructure\GRPC\;CMake Files\src\high_perf_cpp_book\;CMake Files\src\linux_kernel\;CMake Files\src\linux_kernel\kernel_experiments\;CMake Files\src\linux_kernel\linux_sources\;CMake Files\src\linux_kernel\script_linux\;CMake Files\src\linux_kernel\tty\;CMake Files\src\linux_kernel\tty\tty_record\;CMake Files\src\linux_kernel\tty\tty_replay\;CMake Files\src\multithreading\;CMake Files\src\php_ffi\;CMake Files\src\databases\;CMake Files\src\databases\sq_lite\;CMake Files\src\databases\postgres_protocol\;CMake Files\src\own_tools\;CMake Files\src\own_tools\walker\;CMake Files\src\programming_parallel_computers\;CMake Files\src\shared_memory\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\..\usr\lib64\;CMake Files\..\..\..\..\..\..\..\usr\lib64\cmake\;CMake Files\..\..\..\..\..\..\..\usr\lib64\cmake\Boost-1.72.0\;CMake Files\..\..\..\..\..\..\..\usr\lib64\cmake\boost_headers-1.72.0\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw3">
+				<Option output="/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/hw3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 hw3"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw3/fast">
+				<Option output="/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/hw3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 hw3/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw">
+				<Option output="/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/hw" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 hw"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw/fast">
+				<Option output="/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/hw" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/../../../../include/c++/10.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/10.1.0/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 hw/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/valery/Projects/opensource/github/playgrounds/C_Playground/cmake-build-release/src/multithreading/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/include/hello_multithreading_world.hpp">
+			<Option target="hw"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/include/joining_threads.hpp">
+			<Option target="hw"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/include/waiting_for_finish.hpp">
+			<Option target="hw"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/RAII.cpp">
+			<Option target="hw"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/background_task.cpp">
+			<Option target="hw"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/detached_threads.cpp">
+			<Option target="hw"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/hello_multithreading_world.cpp">
+			<Option target="hw"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/joining_threads.cpp">
+			<Option target="hw"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/lifetime_mistake.cpp">
+			<Option target="hw"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/parallel_accumulate.cpp">
+			<Option target="hw"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_1_2/waiting_for_finish.cpp">
+			<Option target="hw"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_3_sharing_data/accidentally_passing_out_a_reference.cpp">
+			<Option target="hw3"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/src/chapter_3_sharing_data/protecting_list.cpp">
+			<Option target="hw3"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/geeksforgeeks/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\geeksforgeeks\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/basics/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\basics\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_asio_part_3/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\boost_learn\boost_asio_part_3\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_part_1/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\boost_learn\boost_part_1\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/boost_learn/boost_asio_part_2/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\boost_learn\boost_asio_part_2\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/experiments/experiments_with_go/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\experiments\experiments_with_go\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/infrastructure/GRPC/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\infrastructure\GRPC\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/high_perf_cpp_book/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\high_perf_cpp_book\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/kernel_experiments/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\linux_kernel\kernel_experiments\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/linux_sources/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\linux_kernel\linux_sources\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/script_linux/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\linux_kernel\script_linux\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/tty/tty_record/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\linux_kernel\tty\tty_record\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/linux_kernel/tty/tty_replay/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\linux_kernel\tty\tty_replay\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/multithreading/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\multithreading\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/php_ffi/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\php_ffi\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/databases/sq_lite/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\databases\sq_lite\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/databases/postgres_protocol/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\databases\postgres_protocol\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/own_tools/walker/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\own_tools\walker\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/programming_parallel_computers/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\programming_parallel_computers\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/shared_memory/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\shared_memory\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/../../../../../../../usr/lib64/cmake/Boost-1.72.0/BoostConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib64\cmake\Boost-1.72.0\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/../../../../../../../usr/lib64/cmake/Boost-1.72.0/BoostConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib64\cmake\Boost-1.72.0\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/../../../../../../../usr/lib64/cmake/boost_headers-1.72.0/boost_headers-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib64\cmake\boost_headers-1.72.0\"/>
+		</Unit>
+		<Unit filename="/home/valery/Projects/opensource/github/playgrounds/C_Playground/../../../../../../../usr/lib64/cmake/boost_headers-1.72.0/boost_headers-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib64\cmake\boost_headers-1.72.0\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

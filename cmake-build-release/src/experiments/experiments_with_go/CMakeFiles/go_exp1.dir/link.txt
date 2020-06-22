@@ -1,0 +1,1 @@
+ccache /usr/bin/c++  -O3 -DNDEBUG  -lrt -lpthread CMakeFiles/go_exp1.dir/src/main.cpp.o  -o go_exp1  -Wl,-rpath,/home/valery/Projects/repo/C_Playground/src/experiments_with_go/include /home/valery/Projects/repo/C_Playground/src/experiments_with_go/include/awesome.so 

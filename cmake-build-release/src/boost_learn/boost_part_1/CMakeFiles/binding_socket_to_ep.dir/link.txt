@@ -1,0 +1,1 @@
+ccache /usr/bin/c++  -O3 -DNDEBUG  -lrt -lpthread CMakeFiles/binding_socket_to_ep.dir/src/binding_socket_to_ep.cpp.o  -o binding_socket_to_ep  -lpthread 
