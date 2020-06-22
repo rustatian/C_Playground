@@ -1,1 +1,0 @@
-ccache /usr/bin/c++  -O3 -DNDEBUG  -lrt -lpthread CMakeFiles/ke.dir/src/kernel_experiments.cpp.o  -o ke 

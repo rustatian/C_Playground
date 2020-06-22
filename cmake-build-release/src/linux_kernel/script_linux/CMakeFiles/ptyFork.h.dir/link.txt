@@ -1,1 +1,0 @@
-ccache /usr/bin/cc -std=c11 -O3 -DNDEBUG  -lrt -lpthread CMakeFiles/ptyFork.h.dir/pty_master_open.c.o CMakeFiles/ptyFork.h.dir/ptyFork.c.o CMakeFiles/ptyFork.h.dir/errors.c.o CMakeFiles/ptyFork.h.dir/tty_raw.c.o CMakeFiles/ptyFork.h.dir/recorder.c.o CMakeFiles/ptyFork.h.dir/replay.c.o  -o ptyFork.h 

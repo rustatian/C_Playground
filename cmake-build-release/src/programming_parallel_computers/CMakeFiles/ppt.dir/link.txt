@@ -1,1 +1,0 @@
-ccache /usr/bin/c++  -fopenmp -fopenmp -O3 -DNDEBUG    CMakeFiles/ppt.dir/src/main.cpp.o  -o ppt 

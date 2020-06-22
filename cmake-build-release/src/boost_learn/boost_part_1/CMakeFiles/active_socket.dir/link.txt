@@ -1,1 +1,0 @@
-ccache /usr/bin/c++  -O3 -DNDEBUG  -lrt -lpthread CMakeFiles/active_socket.dir/src/active_socket.cpp.o  -o active_socket  -lpthread 

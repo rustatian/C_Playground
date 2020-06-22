@@ -1,1 +1,0 @@
-ccache /usr/bin/c++  -O3 -DNDEBUG  -lrt -lpthread CMakeFiles/hw3.dir/src/chapter_3_sharing_data/protecting_list.cpp.o CMakeFiles/hw3.dir/src/chapter_3_sharing_data/accidentally_passing_out_a_reference.cpp.o  -o hw3  -lpthread 

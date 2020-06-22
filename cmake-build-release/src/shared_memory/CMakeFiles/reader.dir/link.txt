@@ -1,1 +1,0 @@
-ccache /usr/bin/cc -O3 -DNDEBUG  -lrt -lpthread CMakeFiles/reader.dir/src/reader.c.o  -o reader 

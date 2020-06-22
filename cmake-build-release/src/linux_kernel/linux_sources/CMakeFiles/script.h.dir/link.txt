@@ -1,1 +1,0 @@
-ccache /usr/bin/cc -O3 -DNDEBUG  -lrt -lpthread CMakeFiles/script.h.dir/script.c.o  -o script.h 

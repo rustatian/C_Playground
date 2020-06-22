@@ -1,1 +1,0 @@
-ccache /usr/bin/c++  -O3 -DNDEBUG  -lrt -lpthread CMakeFiles/postgres_protocol.dir/src/main.cpp.o CMakeFiles/postgres_protocol.dir/src/protocol.cpp.o CMakeFiles/postgres_protocol.dir/src/message.cpp.o  -o postgres_protocol  -lpthread 

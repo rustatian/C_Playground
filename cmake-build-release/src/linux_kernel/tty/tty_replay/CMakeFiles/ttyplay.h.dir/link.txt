@@ -1,1 +1,0 @@
-ccache /usr/bin/cc -O3 -DNDEBUG  -lrt -lpthread CMakeFiles/ttyplay.h.dir/ttyplay.c.o CMakeFiles/ttyplay.h.dir/io.c.o  -o ttyplay.h 

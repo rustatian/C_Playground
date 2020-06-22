@@ -1,1 +1,0 @@
-ccache /usr/bin/c++   -std=c++2a -I/usr/include/ImageMagick-7 -fopenmp -DMAGICKCORE_HDRI_ENABLE=1 -DMAGICKCORE_QUANTUM_DEPTH=16 -lMagick++-7.Q16HDRI -lMagickWand-7.Q16HDRI -lMagickCore-7.Q16HDRI -O3 -DNDEBUG  -lrt -lpthread CMakeFiles/php_ffi.dir/src/main.cpp.o  -o php_ffi  /usr/lib/libMagick++-6.Q16HDRI.so 
