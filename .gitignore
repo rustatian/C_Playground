@@ -57,3 +57,5 @@ cmake-build-debug
 cmake-build-minsizerel
 
 src/php_ffi/imagesst
+**/build
+**/cmake-build-debug_with_options
