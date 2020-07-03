@@ -1,6 +1,8 @@
 project(boost_learn)
 set(CMAKE_CXX_STANDARD 20)
 set(Boost_USE_MULTITHREADED ON)
+SET(CMAKE_CXX_FLAGS -pthread)
+
 add_executable(boost_client src/client.cpp)
 add_executable(boost_server src/server.cpp)
 add_executable(active_socket src/active_socket.cpp)

@@ -1,0 +1,6 @@
+/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/cmake_cookbook/build/CMakeFiles/rebuild_cache.dir
+/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/cmake_cookbook/build/CMakeFiles/edit_cache.dir
+/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/cmake_cookbook/build/CMakeFiles/hello-world.dir
+/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/cmake_cookbook/build/CMakeFiles/message-static.dir
+/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/cmake_cookbook/build/CMakeFiles/message-shared.dir
+/home/valery/Projects/opensource/github/playgrounds/C_Playground/src/cmake_cookbook/build/CMakeFiles/message-objs.dir
