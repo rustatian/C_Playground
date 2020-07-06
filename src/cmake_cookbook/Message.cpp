@@ -1,8 +1,6 @@
-#include "Message.hpp"
-
-
 #include <iostream>
 #include <string>
+#include "Message.hpp"
 
 
 std::ostream &Message::printObject(std::ostream &os) {
