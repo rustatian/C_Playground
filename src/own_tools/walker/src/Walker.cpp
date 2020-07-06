@@ -1,7 +1,3 @@
-//
-// Created by valery on 20/10/2019.
-//
-
 #include "../include/Walker.hpp"
 #include <string>
 #include <iostream>

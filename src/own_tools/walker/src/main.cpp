@@ -1,10 +1,7 @@
-//
-// Created by valery on 11/21/19.
-//
-
 #include <iostream>
 #include <filesystem>
 #include "../include/Walker.hpp"
+
 
 int main(int argc, char *argv[]) {
     // usage:
@@ -16,6 +13,7 @@ int main(int argc, char *argv[]) {
         std::cerr << "Not enough args";
         return 1;
     }
+    
 
     if (argc > 2) {
         throw std::runtime_error("wrong number of parameters");
@@ -31,4 +29,5 @@ int main(int argc, char *argv[]) {
 
     w.pull_repos();
     w.push_origin();
+    return EXIT_SUCCESS;
 }
