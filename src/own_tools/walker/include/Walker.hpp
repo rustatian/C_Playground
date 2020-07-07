@@ -1,7 +1,3 @@
-//
-// Created by valery on 20/10/2019.
-//
-
 #ifndef PLAYGROUND_WALKER_HPP
 #define PLAYGROUND_WALKER_HPP
 
@@ -18,7 +14,7 @@ public:
 
     void add_repo(const std::string& path);
 
-    void pull_repos() noexcept(false);
+    void pull_changes() noexcept(false);
 
     void push_origin() noexcept(false);
 

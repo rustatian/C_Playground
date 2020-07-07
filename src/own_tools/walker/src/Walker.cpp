@@ -1,13 +1,10 @@
 #include "../include/Walker.hpp"
-#include <string>
-#include <iostream>
-#include <filesystem>
-#include <cstdio>
 #include <unistd.h>
-#include <cstring>
+#include <iostream>
+#include <string>
+#include <cstdio>
 #include <thread>
-#include <future>
-#include <vector>
+#include <cstring>
 
 // RAII idiom
 class thread_guard {
@@ -29,8 +26,8 @@ public:
 };
 
 
-void Walker::pull_repos() noexcept(false) {
-    for (auto &path : paths_){
+void Walker::pull_changes() noexcept(false) {
+    for (auto &path : paths_) {
         Walker::executor(path, Walker::PULL_COMMAND_);
     }
 }
@@ -41,7 +38,7 @@ void Walker::push_origin() noexcept(false) {
     }
 }
 
-void Walker::add_repo(const std::string& path) {
+void Walker::add_repo(const std::string &path) {
     paths_.push_back(path);
 }
 

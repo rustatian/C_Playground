@@ -1,33 +1,40 @@
+#include "../include/Walker.hpp"
 #include <iostream>
 #include <filesystem>
-#include "../include/Walker.hpp"
+#include <boost/program_options.hpp>
 
+namespace opt = boost::program_options;
 
 int main(int argc, char *argv[]) {
-    // usage:
-    // firs arg is dir with repos
-    // second - pull or push
-    // third - push or pull
-    // both or just one
-    if (argc < 2) {
-        std::cerr << "Not enough args";
-        return 1;
-    }
-    
+    opt::options_description desc("All options");
 
-    if (argc > 2) {
-        throw std::runtime_error("wrong number of parameters");
+    desc.add_options()
+            ("path", opt::value<std::string>(), "path to the folder with git repositories");
+
+
+    opt::variables_map vm;
+    opt::store(opt::parse_command_line(argc, argv, desc), vm);
+
+    try {
+        opt::notify(vm);
+    } catch (const opt::required_option &e) {
+        std::cout << "Error: " << e.what() << std::endl;
+        return 2;
     }
+
+
+    std::cout << "path is: " << vm["path"].as<std::string>() << std::endl;
 
     Walker w{};
 
-    for (const std::filesystem::directory_entry &entry: std::filesystem::directory_iterator(argv[1])) {
+    for (const std::filesystem::directory_entry &entry: std::filesystem::directory_iterator(
+            vm["path"].as<std::string>())) {
         if (entry.is_directory()) {
             w.add_repo(entry.path().string());
         }
     }
 
-    w.pull_repos();
+    w.pull_changes();
     w.push_origin();
     return EXIT_SUCCESS;
 }
