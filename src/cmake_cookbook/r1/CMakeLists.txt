@@ -9,16 +9,6 @@ message(STATUS "Compile sources into a library? ${USE_LIBRAY}")
 set(BUILD_SHARED_LIBS OFF)
 list(APPEND _sources Message.cpp Message.hpp)
 
-message(STATUS "C flags, Debug configuration: ${CMAKE_C_FLAGS_DEBUG}")
-message(STATUS "C flags, Release configuration: ${CMAKE_C_FLAGS_RELEASE}")
-message(STATUS "C flags, Release configuration with Debug info: ${CMAKE_C_FLAGS_RELWITHDEBINFO}")
-message(STATUS "C flags, minimal Release configuration: ${CMAKE_C_FLAGS_MINSIZEREL}")
-
-message(STATUS "C++ flags, Debug configuration: ${CMAKE_CXX_FLAGS_DEBUG}")
-message(STATUS "C++ flags, Release configuration: ${CMAKE_CXX_FLAGS_RELEASE}")
-message(STATUS "C++ flags, Release configuration with Debug info: ${CMAKE_CXX_FLAGS_RELWITHDEBINFO}")
-message(STATUS "C++ flags, minimal Release configuration: ${CMAKE_CXX_FLAGS_MINSIZEREL}")
-
 if (USE_LIBRARY)
     add_library(message STATIC ${_sources})
     add_executable(hello-world hello-world.cpp)
