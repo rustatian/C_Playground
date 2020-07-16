@@ -1,3 +1,4 @@
+project(deducing_types)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(dt main.cpp main.h)
