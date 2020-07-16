@@ -1,12 +1,9 @@
 cmake_minimum_required(VERSION 3.17 FATAL_ERROR)
 project(fundamentals LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
-
 FIND_PACKAGE(PkgConfig REQUIRED)
 PKG_CHECK_MODULES(GTK3MM REQUIRED gtkmm-3.0)
-
 INCLUDE_DIRECTORIES(${GTK3MM_INCLUDE_DIRS})
 LINK_DIRECTORIES(${GTK3MM_LIBRARY_DIRS})
-
 add_executable(gtk main.cpp helloworld.cpp helloworld.h)
 target_link_libraries(gtk ${GTK3MM_LIBRARIES})
