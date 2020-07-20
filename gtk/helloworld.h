@@ -1,8 +1,10 @@
 #ifndef FUNDAMENTALS_HELLOWORLD_H
 #define FUNDAMENTALS_HELLOWORLD_H
 
-#include <gtkmm-3.0/gtkmm/button.h>
-#include <gtkmm-3.0/gtkmm/window.h>
+#include <gtk/gtkmm/button.h>
+#include <gtk/gtkmm/window.h>
+//#include <gtkmm-3.0/gtkmm/button.h>
+//#include <gtkmm-3.0/gtkmm/window.h>
 
 class HelloWorld : public Gtk::Window {
 public:
