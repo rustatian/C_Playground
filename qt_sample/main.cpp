@@ -6,5 +6,5 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
     BlockingClient client;
     client.show();
-    return app.exec();
+    return QApplication::exec();
 }
