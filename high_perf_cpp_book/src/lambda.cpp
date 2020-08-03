@@ -1,7 +1,3 @@
-//
-// Created by valery on 22/10/2019.
-//
-
 #include "../include/lambda.hpp"
 #include <vector>
 #include <list>

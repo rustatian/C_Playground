@@ -16,3 +16,7 @@ public:
 
     double publicMemberFunction();
 };
+
+
+/// CONST/DESTR
+
