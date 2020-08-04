@@ -22,13 +22,15 @@ public:
 
 /// CONST/DESTR
 
+#include<boost/thread/thread.hpp>
+
 struct Square {
     int size;
 };
 
 class Rectangle {
 public:
-    Rectangle(): width(0), height(0) {
+    Rectangle() : width(0), height(0) {
 
     };
 
@@ -43,10 +45,22 @@ void use_rectangle(Rectangle rectangle);
 
 
 struct Rectangle2 {
-    int lenght;
+    int length;
 };
 
+void fillFile(const std::string& fillChar, std::size_t size, const char *filename){
+    std::cout << fillChar << std::endl;
+}
+
 int main() {
+    boost::thread(boost::bind(
+            &fillFile,
+            "afsdfasdf",
+            8 * 1024 * 1024,
+            "save_file.txt"
+    )).join();
+
+
     Square square;
     // use_rectangle(square); // error when explicit
 
