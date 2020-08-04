@@ -22,13 +22,25 @@ public:
 
 /// CONST/DESTR
 
-struct Rectangle {
-    int height;
-    int width;
+struct Square {
+    int size;
 };
 
+class Rectangle {
+public:
+    Rectangle();
+
+    Rectangle(Square square);
+};
+
+void use_rectangle(Rectangle rectangle);
+
+
 int main() {
-    Rectangle rectangle;
-    std::cout << "Height: " << rectangle.height << std::endl;
+    Square square;
+    use_rectangle(square);
+    Rectangle obj;
+    Rectangle obj2(square);
+
     return EXIT_SUCCESS;
 }
