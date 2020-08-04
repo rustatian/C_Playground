@@ -28,19 +28,31 @@ struct Square {
 
 class Rectangle {
 public:
-    Rectangle();
+    Rectangle(): width(0), height(0) {
 
-    Rectangle(Square square);
+    };
+
+    explicit Rectangle(Square square);
+
+public:
+    int width;
+    int height;
 };
 
 void use_rectangle(Rectangle rectangle);
 
 
+struct Rectangle2 {
+    int lenght;
+};
+
 int main() {
     Square square;
-    use_rectangle(square);
-    Rectangle obj;
-    Rectangle obj2(square);
+    // use_rectangle(square); // error when explicit
+
+    Rectangle rectangle;
+    std::cout << "Width: " << rectangle.width << std::endl;  // 0
+    std::cout << "Height: " << rectangle.height << std::endl; // 0
 
     return EXIT_SUCCESS;
 }
