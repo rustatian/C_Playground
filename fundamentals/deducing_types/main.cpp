@@ -26,6 +26,7 @@ struct Buffer {
 int main() {
     Buffer<char, 128> glob;
     auto a = glob.size();
+    auto b = glob.size();
     std::cout << a << std::endl;
     int x = 27; // x is an int
     const int cx = x; // cx is a const int
