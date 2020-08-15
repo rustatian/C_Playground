@@ -23,6 +23,14 @@ struct Buffer {
     }
 };
 
+template<typename T>
+concept EqualityComparable = requires(T a, T b) {
+    {a == b} -> std::boolean;
+    {a != b} -> std::boolean;
+};
+
+void f(const EqualityComparable auto&);
+
 int main() {
     Buffer<char, 128> glob;
     auto a = glob.size();
