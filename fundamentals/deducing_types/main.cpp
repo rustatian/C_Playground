@@ -24,6 +24,7 @@ struct Buffer {
 
 int main() {
     Buffer<char, 128> glob;
+    glob.size();
     int x = 27; // x is an int
     const int cx = x; // cx is a const int
     const int &rx = x; // rx is a reference to x as a const int
