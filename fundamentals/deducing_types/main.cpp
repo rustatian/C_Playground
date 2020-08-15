@@ -14,8 +14,6 @@ void f3(T *param); // param now is a pointer
 
 template<typename T>
 void f4(T &&param); // universal reference
-
-
 using namespace std::literals;
 
 // Declaration of the concept "Hashable", which is satisfied by
@@ -25,7 +23,6 @@ template<typename T>
 concept Hashable = requires(T a) {
     { std::hash<T>{}(a) } -> std::convertible_to<std::size_t>;
 };
-
 
 struct meow {};
 
