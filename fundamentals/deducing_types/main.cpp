@@ -13,6 +13,15 @@ void f3(T *param); // param now is a pointer
 template<typename T>
 void f4(T &&param); // universal reference
 
+template<typename T, int N>
+struct Buffer {
+    using value_type = T;
+
+    constexpr int size() {
+        return N;
+    }
+};
+
 int main() {
     int x = 27; // x is an int
     const int cx = x; // cx is a const int
