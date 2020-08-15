@@ -1,4 +1,5 @@
 #include <cstdlib>
+#include <iostream>
 #include "main.h"
 
 template<typename T>
@@ -24,7 +25,8 @@ struct Buffer {
 
 int main() {
     Buffer<char, 128> glob;
-    glob.size();
+    auto a = glob.size();
+    std::cout << a << std::endl;
     int x = 27; // x is an int
     const int cx = x; // cx is a const int
     const int &rx = x; // rx is a reference to x as a const int
