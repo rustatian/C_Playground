@@ -2,6 +2,7 @@
 #include <iostream>
 #include "main.h"
 #include <concepts>
+#include <coroutine>
 
 template<typename T>
 void f(T &param); // param is reference
@@ -24,10 +25,17 @@ concept Hashable = requires(T a) {
     { std::hash<T>{}(a) } -> std::convertible_to<std::size_t>;
 };
 
-struct meow {};
+struct meow {
+};
 
 template<Hashable T>
 void ff(T); // constrained C++20 function template
+
+task<int> foo(int a, int b) {
+    int x = a + b;
+    co_await syspend_always{};
+    co_return x;
+}
 
 int main() {
     int x = 27; // x is an int
