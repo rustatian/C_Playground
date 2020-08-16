@@ -31,16 +31,36 @@ struct meow {
 template<Hashable T>
 void ff(T); // constrained C++20 function template
 
-task<int> foo(int a, int b) {
-    int x = a + b;
-    co_await syspend_always{};
-    co_return x;
+generator<int> generateNumbers(int begin, int inc = 1) {
+
+    for (int i = begin;; i += inc) {
+        co_yield i;
+    }
+
 }
 
 int main() {
-    int x = 27; // x is an int
-    const int cx = x; // cx is a const int
-    const int &rx = x; // rx is a reference to x as a const int
+
+    std::cout << std::endl;
+
+    const auto numbers= generateNumbers(-10);
+
+    for (int i= 1; i <= 20; ++i)
+        std::cout << numbers << " "; // Runs finite = 20 times
+
+
+    for (auto n: generateNumbers(0, 5)) // Runs infinite times
+        std::cout << n << " "; // (3)
+
+    std::cout << "\n\n";
+
+}
+
+
+//int main() {
+//    int x = 27; // x is an int
+//    const int cx = x; // cx is a const int
+//    const int &rx = x; // rx is a reference to x as a const int
 
 //    f(x); // T is int, param's type is int&
 //    f(cx); // T is const int, param's type is const int&
@@ -61,8 +81,8 @@ int main() {
 //    f3(&x);
 //    f3(zy);
 //
-    return EXIT_SUCCESS;
-}
+//    return EXIT_SUCCESS;
+//}
 
 /*
  * template<typename T>
