@@ -37,7 +37,6 @@ task<int> foo(int a, int b) {
     co_return x;
 }
 
-
 int main() {
     int x = 27; // x is an int
     const int cx = x; // cx is a const int
