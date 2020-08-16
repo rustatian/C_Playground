@@ -22,6 +22,7 @@ using namespace std::literals;
 // the expression std::hash<T>{}(a) compiles and its result is convertible to std::size_t
 template<typename T>
 concept Hashable = requires(T a) {
+    
     { std::hash<T>{}(a) } -> std::convertible_to<std::size_t>;
 };
 
@@ -33,6 +34,7 @@ void ff(T); // constrained C++20 function template
 
 task<int> foo(int a, int b) {
     int x = a + b;
+
     co_await syspend_always{};
     co_return x;
 }
