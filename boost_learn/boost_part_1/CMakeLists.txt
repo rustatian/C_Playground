@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.30)
+
 project(boost_learn)
 set(CMAKE_CXX_STANDARD 20)
 set(Boost_USE_MULTITHREADED ON)
